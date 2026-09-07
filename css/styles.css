@@ -42,6 +42,7 @@ header nav .logo {
   border: 1px solid #faf9f6;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
 header nav .logo a {
   text-decoration: none;
@@ -57,11 +58,15 @@ header nav .logo .home-label a {
   font-size: 18px;
   color: black;
 }
+header nav .logo:hover {
+  transform: scale(1.06);
+}
 header nav .idea {
   background-color: #faf9f6;
   border: 1px solid #faf9f6;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   height: 120px;
   min-width: 500px;
   display: flex;
@@ -74,6 +79,9 @@ header nav .idea a {
   font-weight: 500;
   font-size: 42px;
 }
+header nav .idea:hover {
+  transform: scale(1.06);
+}
 header nav .modes {
   height: 120px;
   min-width: 200px;
@@ -81,6 +89,7 @@ header nav .modes {
   border: 1px solid #faf9f6;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,4 +102,7 @@ header nav .modes button {
 header nav .modes button svg {
   width: 42px;
   height: 42px;
+}
+header nav .modes:hover {
+  transform: scale(1.06);
 }

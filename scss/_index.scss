@@ -27,8 +27,10 @@ header {
         a {
           font-size: 18px;
           color: black;
-
         }
+      }
+      &:hover {
+        transform: scale($scale);
       }
     }
     .idea {
@@ -44,7 +46,9 @@ header {
         font-weight: 500;
         font-size: 42px;
       }
-
+      &:hover {
+        transform: scale($scale);
+      }
     }
     .modes {
       height: 120px;
@@ -58,9 +62,12 @@ header {
         background-color: #faf9f6;
         cursor: pointer;
         svg {
-        width: 42px;
-        height: 42px;
+          width: 42px;
+          height: 42px;
+        }
       }
+      &:hover {
+        transform: scale($scale);
       }
     }
   }
