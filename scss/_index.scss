@@ -5,69 +5,100 @@ header {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    .glow-hover {
+      position: relative;
+      overflow: hidden;
 
-    .logo {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      min-width: 400px;
-      height: 120px;
-      gap: 5px;
-      @include border($off-white);
-
-      a {
-        text-decoration: none;
-        svg {
-          width: 120px;
-          height: 120px;
-        }
+      &::before {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        width: 180px;
+        height: 180px;
+        background: radial-gradient(
+          circle,
+          var(--primary-color),
+          transparent 70%
+        );
+        left: var(--x);
+        top: var(--y);
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.2s ease;
       }
-      .home-label {
-        font-weight: 300;
+      &:hover::before {
+        opacity: 1;
+      }
+      &.logo {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        min-width: 400px;
+        height: 120px;
+        gap: 5px;
+        position: relative;
+        overflow: hidden;
+        @include border(var(--border-color));
         a {
-          font-size: 18px;
-          color: black;
+          text-decoration: none;
+          svg {
+            width: 120px;
+            height: 120px;
+            .logo-black-shape {
+              fill: var(--logo-accent);
+              transition: fill 0.3s ease;
+            }
+          }
+        }
+        .home-label {
+          font-weight: 300;
+          a {
+            font-size: 18px;
+            color: var(--text-color);
+            
+          }
+        }
+        &:hover {
+          transform: scale($scale);
         }
       }
-      &:hover {
-        transform: scale($scale);
-      }
-    }
-    .idea {
-      @include border($off-white);
-      height: 120px;
-      min-width: 500px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      a {
-        text-decoration: none;
-        color: #6e6e6e;
-        font-weight: 500;
-        font-size: 42px;
-      }
-      &:hover {
-        transform: scale($scale);
-      }
-    }
-    .modes {
-      height: 120px;
-      min-width: 200px;
-      @include border($off-white);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      button {
-        border: none;
-        background-color: #faf9f6;
-        cursor: pointer;
-        svg {
-          width: 42px;
-          height: 42px;
+      &.idea {
+        @include border(var(--border-color));
+        height: 120px;
+        min-width: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+          text-decoration: none;
+          color: var(--text-color);
+          font-weight: 500;
+          font-size: 42px;
+        }
+        &:hover {
+          transform: scale($scale);
         }
       }
-      &:hover {
-        transform: scale($scale);
+      &.modes {
+        height: 120px;
+        min-width: 200px;
+        @include border(var(--border-color));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+          svg {
+            width: 42px;
+            height: 42px;
+            stroke: var(--text-color);
+          }
+        }
+        &:hover {
+          transform: scale($scale);
+        }
       }
     }
   }

@@ -7,3 +7,32 @@ $border-primary: 15px;
 $primary-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
 $scale: 1.06;
+
+
+:root {
+    --bg-color: #{$off-white};
+    --text-color: #1a1a1a;
+    --primary-color: #{$primary-color};
+    --border-color: #{$off-white};
+    --logo-accent: #000000;
+}
+
+html.dark-mode {
+    --bg-color: black;
+    --text-color: #f5f5f5;
+    --primary-color: #{$primary-color};
+    --border-color: #3a3a3a;
+    --logo-accent: #ffffff;
+}
+
+.icon-sun {
+    display: none;
+}
+
+html.dark-mode .icon-moon {
+    display: none;
+}
+
+html.dark-mode .icon-sun {
+    display: inline-block;
+}

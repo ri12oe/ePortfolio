@@ -1,3 +1,31 @@
+:root {
+  --bg-color: #faf9f6;
+  --text-color: #1a1a1a;
+  --primary-color: #7A3FFF;
+  --border-color: #faf9f6;
+  --logo-accent: #000000;
+}
+
+html.dark-mode {
+  --bg-color: black;
+  --text-color: #f5f5f5;
+  --primary-color: #7A3FFF;
+  --border-color: #3a3a3a;
+  --logo-accent: #ffffff;
+}
+
+.icon-sun {
+  display: none;
+}
+
+html.dark-mode .icon-moon {
+  display: none;
+}
+
+html.dark-mode .icon-sun {
+  display: inline-block;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +40,9 @@ body {
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -31,39 +62,65 @@ header nav {
   align-items: center;
   flex-wrap: wrap;
 }
-header nav .logo {
+header nav .glow-hover {
+  position: relative;
+  overflow: hidden;
+}
+header nav .glow-hover::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, var(--primary-color), transparent 70%);
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+header nav .glow-hover:hover::before {
+  opacity: 1;
+}
+header nav .glow-hover.logo {
   display: flex;
   align-items: flex-end;
   justify-content: center;
   min-width: 400px;
   height: 120px;
   gap: 5px;
-  background-color: #faf9f6;
-  border: 1px solid #faf9f6;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--border-color);
+  border: 1px solid var(--border-color);
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
-header nav .logo a {
+header nav .glow-hover.logo a {
   text-decoration: none;
 }
-header nav .logo a svg {
+header nav .glow-hover.logo a svg {
   width: 120px;
   height: 120px;
 }
-header nav .logo .home-label {
+header nav .glow-hover.logo a svg .logo-black-shape {
+  fill: var(--logo-accent);
+  transition: fill 0.3s ease;
+}
+header nav .glow-hover.logo .home-label {
   font-weight: 300;
 }
-header nav .logo .home-label a {
+header nav .glow-hover.logo .home-label a {
   font-size: 18px;
-  color: black;
+  color: var(--text-color);
 }
-header nav .logo:hover {
+header nav .glow-hover.logo:hover {
   transform: scale(1.06);
 }
-header nav .idea {
-  background-color: #faf9f6;
-  border: 1px solid #faf9f6;
+header nav .glow-hover.idea {
+  background-color: var(--border-color);
+  border: 1px solid var(--border-color);
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
@@ -73,20 +130,20 @@ header nav .idea {
   justify-content: center;
   align-items: center;
 }
-header nav .idea a {
+header nav .glow-hover.idea a {
   text-decoration: none;
-  color: #6e6e6e;
+  color: var(--text-color);
   font-weight: 500;
   font-size: 42px;
 }
-header nav .idea:hover {
+header nav .glow-hover.idea:hover {
   transform: scale(1.06);
 }
-header nav .modes {
+header nav .glow-hover.modes {
   height: 120px;
   min-width: 200px;
-  background-color: #faf9f6;
-  border: 1px solid #faf9f6;
+  background-color: var(--border-color);
+  border: 1px solid var(--border-color);
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
@@ -94,15 +151,16 @@ header nav .modes {
   justify-content: center;
   align-items: center;
 }
-header nav .modes button {
+header nav .glow-hover.modes button {
   border: none;
-  background-color: #faf9f6;
+  background-color: transparent;
   cursor: pointer;
 }
-header nav .modes button svg {
+header nav .glow-hover.modes button svg {
   width: 42px;
   height: 42px;
+  stroke: var(--text-color);
 }
-header nav .modes:hover {
+header nav .glow-hover.modes:hover {
   transform: scale(1.06);
 }
