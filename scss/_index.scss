@@ -290,7 +290,6 @@ main {
             font-size: 15px;
             line-height: 1.4;
             color: #b9b9c2;
-            
           }
 
           .code {
@@ -330,8 +329,6 @@ main {
             justify-content: space-between;
             max-width: 320px;
             margin: 20px auto 0;
-            
-            
           }
 
           .post__actions button {
@@ -342,7 +339,6 @@ main {
             display: flex;
             align-items: center;
             justify-content: center;
-            
           }
 
           .post__actions svg {
@@ -361,8 +357,40 @@ main {
       @include border(var(--border-color));
       flex: 1 1 calc(35% - 12px);
       min-width: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       &:hover {
         transform: scale($scale-content);
+      }
+      .about-me-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        .image-containter {
+            background-image: url(../images/me.jpg);
+            width: 550px;
+            height: 600px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .big-txt {
+          a {
+            border-bottom: 5px solid var(--ink);
+            width: fit-content;
+            text-decoration: none;
+            color: $primary-color;
+            font-weight: 800;
+            font-size: clamp(16px, 2.5vw, 42px);
+            text-transform: uppercase;
+          }
+        }
+        .about-subcontent {
+
+        }
       }
     }
   }

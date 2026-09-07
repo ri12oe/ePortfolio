@@ -429,11 +429,37 @@ main .main-content .right-content {
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   flex: 1 1 calc(35% - 12px);
   min-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 main .main-content .right-content:hover {
   transform: scale(1.02);
 }
-
+main .main-content .right-content .about-me-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+main .main-content .right-content .about-me-content .image-containter {
+  background-image: url(../images/me.jpg);
+  width: 550px;
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+main .main-content .right-content .about-me-content .big-txt a {
+  border-bottom: 5px solid var(--ink);
+  width: fit-content;
+  text-decoration: none;
+  color: #7A3FFF;
+  font-weight: 800;
+  font-size: clamp(16px, 2.5vw, 42px);
+  text-transform: uppercase;
+}
 @media (max-width: 992px) {
   header nav .glow-hover.logo {
     min-width: 300px;
