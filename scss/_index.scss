@@ -126,6 +126,7 @@ header {
 }
 
 main {
+  margin-bottom: 42px;
   .main-content {
     display: flex;
     flex-wrap: wrap;
@@ -373,27 +374,27 @@ main {
         text-align: center;
         gap: 24px;
         .bold-txt {
-            color: var(--ink);
-            font-weight: 600;
-            font-size: 32px;
+          color: var(--ink);
+          font-weight: 600;
+          font-size: 32px;
         }
         .bold-purple-txt {
-            color: var(--primary-color);
-            font-weight: 500;
-            font-size: 18px;
+          color: var(--primary-color);
+          font-weight: 500;
+          font-size: 18px;
         }
         .gray-txt {
-            color: var(--muted);
-            font-weight: 400;
-            font-size: 16px;
+          color: var(--muted);
+          font-weight: 400;
+          font-size: 16px;
         }
         .image-containter {
-            background-image: url(../images/me.jpg);
-            width: 550px;
-            height: 600px;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
+          background-image: url(../images/me.jpg);
+          width: 550px;
+          height: 600px;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
         }
         .big-txt {
           a {
@@ -406,9 +407,71 @@ main {
             text-transform: uppercase;
           }
         }
-        
       }
     }
+  }
+}
+
+footer {
+  @include border(var(--border-color));
+  padding: 32px;
+  .upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    .connects {
+      .connect-title {
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--ink);
+      }
+      .links {
+        display: flex;
+        gap: 24px;
+        a {
+          font-size: 18px;
+          color: var(--border-line);
+        }
+      }
+    }
+    .contact {
+      .title-contact {
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--ink);
+      }
+      .contact-link {
+        color: var(--ink);
+        font-size: 24px;
+        .contact-bold-txt {
+          a {
+            border-bottom: 5px solid var(--border-line);
+            width: fit-content;
+            text-decoration: none;
+            color: $primary-color;
+            font-weight: 800;
+            font-size: clamp(16px, 2.5vw, 42px);
+            text-transform: uppercase;
+          }
+        }
+        .dark-purple-mark {
+          color: $primary-color;
+        }
+        .light-purple-mark {
+          color: $secondary-color;
+        }
+        .light-txt {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+    color: var(--muted);
+    font-size: 24px;
+    font-weight: 400;
   }
 }
 
