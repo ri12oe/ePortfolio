@@ -166,6 +166,27 @@ header nav .glow-hover.modes:hover {
   transform: scale(1.06);
 }
 
+.glow-hover {
+  position: relative;
+  overflow: hidden;
+}
+.glow-hover::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, var(--primary-color), transparent 70%);
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.glow-hover:hover::before {
+  opacity: 1;
+}
+
 main .main-content {
   display: flex;
   flex-wrap: wrap;
@@ -188,6 +209,9 @@ main .main-content .left-content .top {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
+main .main-content .left-content .top:hover {
+  transform: scale(1.02);
+}
 main .main-content .left-content .bottoms {
   flex: 1;
   display: flex;
@@ -202,6 +226,9 @@ main .main-content .left-content .bottoms .bottom {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
+main .main-content .left-content .bottoms .bottom:hover {
+  transform: scale(1.02);
+}
 main .main-content .right-content {
   background-color: var(--border-color);
   border: 1px solid var(--border-color);
@@ -210,4 +237,7 @@ main .main-content .right-content {
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   flex: 1 1 calc(35% - 12px);
   min-width: 250px;
+}
+main .main-content .right-content:hover {
+  transform: scale(1.02);
 }
