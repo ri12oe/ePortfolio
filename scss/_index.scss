@@ -55,7 +55,7 @@ header {
           font-weight: 300;
           a {
             font-size: 18px;
-            color: var(--text-color);
+            color: var(--logo-accent);
           }
         }
         &:hover {
@@ -73,7 +73,7 @@ header {
           text-decoration: none;
           color: var(--text-color);
           font-weight: 500;
-          font-size: 42px;
+          font-size: clamp(24px, 3vw, 42px);
         }
         &:hover {
           transform: scale($scale);
@@ -93,7 +93,7 @@ header {
           svg {
             width: 42px;
             height: 42px;
-            stroke: var(--text-color);
+            stroke: var(--logo-accent);
           }
         }
         &:hover {
@@ -139,10 +139,45 @@ main {
       gap: 24px;
       .top {
         min-width: 100%;
-        height: 35%;
+        min-height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 32px;
         @include border(var(--border-color));
         &:hover {
           transform: scale($scale-content);
+        }
+        .title {
+            font-size: clamp(24px, 4vw, 62px);
+            text-align: left;
+            font-weight: 200;
+            line-height: 1.2;
+        }
+        .callout {
+            font-size: clamp(13px, 1.6vw, 24px);
+            color: black;
+            .light-txt {
+                color: $secondary-color;
+            }
+            .big-txt {
+                a {
+                    border-bottom: 5px solid $primary-color;
+                    width: fit-content;
+                    text-decoration: none;
+                    color: $primary-color;
+                    font-weight: 800;
+                    font-size: clamp(16px, 2.5vw, 42px);
+                    text-transform: uppercase;
+                }
+            }
+            .dark-purple-mark {
+                color: $primary-color;
+            }
+            .light-purple-mark {
+                color: $secondary-color;
+            }
         }
       }
       .bottoms {
@@ -170,13 +205,77 @@ main {
   }
 }
 
-// @media (max-width: 768px) {
-//   main .main-content {
-//     flex-direction: column;
-//     .left-content,
-//     .right-content {
-//       flex-basis: 100%;
-//       width: 100%;
-//     }
-//   }
-// }
+
+@media (max-width: 992px) {
+  header nav {
+    .glow-hover.logo {
+      min-width: 300px;
+    }
+    .glow-hover.idea {
+      min-width: 300px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header nav {
+    justify-content: center;
+    gap: 16px;
+    .glow-hover.logo,
+    .glow-hover.idea,
+    .glow-hover.modes {
+      min-width: unset;
+      width: 100%;
+    }
+  }
+
+  main .main-content {
+    flex-direction: column;
+    .left-content,
+    .right-content {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+    .left-content {
+      .top {
+        padding: 20px;
+      }
+      .bottoms {
+        flex-direction: column;
+        .bottom {
+          min-height: 150px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  header nav {
+    .glow-hover.logo {
+      min-width: unset;
+      height: auto;
+      a svg {
+        width: 90px;
+        height: 90px;
+      }
+    }
+    .glow-hover.idea {
+      min-width: unset;
+      height: auto;
+    }
+    .glow-hover.modes {
+      min-width: unset;
+      height: auto;
+    }
+  }
+
+  main .main-content .left-content .top {
+    min-height: 220px;
+    padding: 16px;
+  }
+}

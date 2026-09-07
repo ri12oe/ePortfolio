@@ -1,5 +1,7 @@
 $primary-color: #7A3FFF;
 
+$secondary-color: #B794FF;
+
 $off-white: #faf9f6;
 
 $border-primary: 15px;
@@ -13,7 +15,7 @@ $scale-content: 1.02;
 
 :root {
     --bg-color: #{$off-white};
-    --text-color: #1a1a1a;
+    --text-color: #808080;
     --primary-color: #{$primary-color};
     --border-color: #{$off-white};
     --logo-accent: #000000;
