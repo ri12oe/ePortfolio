@@ -74,6 +74,9 @@ header {
           color: var(--text-color);
           font-weight: 500;
           font-size: clamp(24px, 3vw, 42px);
+          &:hover {
+            color: var(--border-line);
+          }
         }
         &:hover {
           transform: scale($scale);
@@ -171,6 +174,9 @@ main {
               font-weight: 800;
               font-size: clamp(16px, 2.5vw, 42px);
               text-transform: uppercase;
+              &:hover {
+                color: var(--border-line);
+              }
             }
           }
           .dark-purple-mark {
@@ -215,6 +221,9 @@ main {
                 font-weight: 800;
                 font-size: clamp(16px, 2.5vw, 42px);
                 text-transform: uppercase;
+                &:hover {
+                  color: var(--border-line);
+                }
               }
             }
           }
@@ -304,6 +313,9 @@ main {
             a {
               text-decoration: none;
               color: $primary-color;
+              &:hover {
+                color: var(--border-line);
+              }
             }
           }
 
@@ -390,7 +402,7 @@ main {
         }
         .image-containter {
           background-image: url(../images/me.jpg);
-          width: 550px;
+          width: 420px;
           height: 600px;
           background-position: center;
           background-size: cover;
@@ -405,6 +417,9 @@ main {
             font-weight: 800;
             font-size: clamp(16px, 2.5vw, 42px);
             text-transform: uppercase;
+            &:hover {
+              color: var(--border-line);
+            }
           }
         }
       }
@@ -431,7 +446,10 @@ footer {
         gap: 24px;
         a {
           font-size: 18px;
-          color: var(--border-line);
+          color: var(--primary-color);
+          &:hover {
+            color: var(--border-line);
+          }
         }
       }
     }
@@ -453,6 +471,9 @@ footer {
             font-weight: 800;
             font-size: clamp(16px, 2.5vw, 42px);
             text-transform: uppercase;
+            &:hover {
+              color: var(--border-line);
+            }
           }
         }
         .dark-purple-mark {

@@ -11,6 +11,7 @@
   --border: #e5e5e5;
   --border-line: #7A3FFF;
   --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --hover-color: black;
 }
 
 html.dark-mode {
@@ -26,6 +27,7 @@ html.dark-mode {
   --border: #e5e5e5;
   --border-line: #B794FF;
   --box-shadow: 0 4px 12px rgba(254, 253, 253, 0.3);
+  --hover-color: #f5f5f5;
 }
 
 .icon-sun {
@@ -151,6 +153,9 @@ header nav .glow-hover.idea a {
   font-weight: 500;
   font-size: clamp(24px, 3vw, 42px);
 }
+header nav .glow-hover.idea a:hover {
+  color: var(--border-line);
+}
 header nav .glow-hover.idea:hover {
   transform: scale(1.06);
 }
@@ -256,6 +261,9 @@ main .main-content .left-content .top .callout .big-txt a {
   font-size: clamp(16px, 2.5vw, 42px);
   text-transform: uppercase;
 }
+main .main-content .left-content .top .callout .big-txt a:hover {
+  color: var(--border-line);
+}
 main .main-content .left-content .top .callout .dark-purple-mark {
   color: #7A3FFF;
 }
@@ -302,6 +310,9 @@ main .main-content .left-content .bottoms .bottom .title-left-cornor .big-txt a 
   font-weight: 800;
   font-size: clamp(16px, 2.5vw, 42px);
   text-transform: uppercase;
+}
+main .main-content .left-content .bottoms .bottom .title-left-cornor .big-txt a:hover {
+  color: var(--border-line);
 }
 main .main-content .left-content .bottoms .bottom svg {
   width: 70px;
@@ -387,6 +398,9 @@ main .main-content .left-content .bottoms .bottom2 .code a {
   text-decoration: none;
   color: #7A3FFF;
 }
+main .main-content .left-content .bottoms .bottom2 .code a:hover {
+  color: var(--border-line);
+}
 main .main-content .left-content .bottoms .bottom2 .code .kw {
   color: #B794FF;
 }
@@ -470,7 +484,7 @@ main .main-content .right-content .about-me-content .gray-txt {
 }
 main .main-content .right-content .about-me-content .image-containter {
   background-image: url(../images/me.jpg);
-  width: 550px;
+  width: 420px;
   height: 600px;
   background-position: center;
   background-size: cover;
@@ -484,6 +498,9 @@ main .main-content .right-content .about-me-content .big-txt a {
   font-weight: 800;
   font-size: clamp(16px, 2.5vw, 42px);
   text-transform: uppercase;
+}
+main .main-content .right-content .about-me-content .big-txt a:hover {
+  color: var(--border-line);
 }
 
 footer {
@@ -511,6 +528,9 @@ footer .upper .connects .links {
 }
 footer .upper .connects .links a {
   font-size: 18px;
+  color: var(--primary-color);
+}
+footer .upper .connects .links a:hover {
   color: var(--border-line);
 }
 footer .upper .contact .title-contact {
@@ -530,6 +550,9 @@ footer .upper .contact .contact-link .contact-bold-txt a {
   font-weight: 800;
   font-size: clamp(16px, 2.5vw, 42px);
   text-transform: uppercase;
+}
+footer .upper .contact .contact-link .contact-bold-txt a:hover {
+  color: var(--border-line);
 }
 footer .upper .contact .contact-link .dark-purple-mark {
   color: #7A3FFF;

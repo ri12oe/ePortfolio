@@ -30,6 +30,7 @@ $scale-content: 1.02;
     --border: #e5e5e5;
     --border-line: #{$primary-color};
     --box-shadow: #{$primary-shadow};
+    --hover-color: black;
 }
 
 html.dark-mode {
@@ -45,6 +46,7 @@ html.dark-mode {
     --border: #e5e5e5;
     --border-line: #{$secondary-color};
     --box-shadow: #{$secondary-shadow};
+    --hover-color: #f5f5f5;
 }
 
 .icon-sun {
