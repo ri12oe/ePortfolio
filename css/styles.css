@@ -4,6 +4,11 @@
   --primary-color: #7A3FFF;
   --border-color: #faf9f6;
   --logo-accent: #000000;
+  --card: #ffffff;
+  --ink: black;
+  --muted: #6e6e6e;
+  --purple: #7A3FFF;
+  --border: #e5e5e5;
 }
 
 html.dark-mode {
@@ -12,6 +17,11 @@ html.dark-mode {
   --primary-color: #7A3FFF;
   --border-color: #3a3a3a;
   --logo-accent: #ffffff;
+  --card: #1e1e1e;
+  --ink: #f5f5f5;
+  --muted: #9a9a9a;
+  --purple: #7A3FFF;
+  --border: #e5e5e5;
 }
 
 .icon-sun {
@@ -225,13 +235,13 @@ main .main-content .left-content .top .title {
 }
 main .main-content .left-content .top .callout {
   font-size: clamp(13px, 1.6vw, 24px);
-  color: black;
+  color: var(--ink);
 }
 main .main-content .left-content .top .callout .light-txt {
   color: #B794FF;
 }
 main .main-content .left-content .top .callout .big-txt a {
-  border-bottom: 5px solid #7A3FFF;
+  border-bottom: 5px solid var(--ink);
   width: fit-content;
   text-decoration: none;
   color: #7A3FFF;
@@ -248,11 +258,11 @@ main .main-content .left-content .top .callout .light-purple-mark {
 main .main-content .left-content .bottoms {
   flex: 1;
   display: flex;
+  align-items: stretch;
   gap: 24px;
 }
 main .main-content .left-content .bottoms .bottom {
   flex: 1;
-  height: 100%;
   background-color: var(--border-color);
   border: 1px solid var(--border-color);
   border-radius: 15px;
@@ -269,7 +279,7 @@ main .main-content .left-content .bottoms .bottom:hover {
 }
 main .main-content .left-content .bottoms .bottom .title-left-cornor {
   text-align: center;
-  color: black;
+  color: var(--ink);
 }
 main .main-content .left-content .bottoms .bottom .title-left-cornor .light-txt {
   color: #B794FF;
@@ -292,7 +302,8 @@ main .main-content .left-content .bottoms .bottom svg {
 }
 main .main-content .left-content .bottoms .bottom2 {
   flex: 1;
-  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
   background-color: var(--border-color);
   border: 1px solid var(--border-color);
   border-radius: 15px;
@@ -302,7 +313,110 @@ main .main-content .left-content .bottoms .bottom2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 32px;
+}
+main .main-content .left-content .bottoms .bottom2 .post {
+  padding: 24px;
+}
+main .main-content .left-content .bottoms .bottom2 .post__header {
+  display: flex;
+  gap: 14px;
+}
+main .main-content .left-content .bottoms .bottom2 .avatar {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #f1f0ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .main-content .left-content .bottoms .bottom2 .avatar svg {
+  width: 32px;
+  height: 32px;
+}
+main .main-content .left-content .bottoms .bottom2 .post__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 17px;
+  color: var(--ink);
+}
+main .main-content .left-content .bottoms .bottom2 .post__meta svg {
+  width: 16px;
+  height: 16px;
+}
+main .main-content .left-content .bottoms .bottom2 .post__meta .name {
+  font-weight: 600;
+}
+main .main-content .left-content .bottoms .bottom2 .post__meta .handle,
+main .main-content .left-content .bottoms .bottom2 .post__meta .date {
+  color: var(--muted);
+  font-weight: 500;
+}
+main .main-content .left-content .bottoms .bottom2 .post__title {
+  margin-top: 2px;
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+main .main-content .left-content .bottoms .bottom2 .post__quote {
+  margin: 14px 0 12px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #b9b9c2;
+}
+main .main-content .left-content .bottoms .bottom2 .code {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-family: "Fira Code", "JetBrains Mono", monospace;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+main .main-content .left-content .bottoms .bottom2 .code a {
+  text-decoration: none;
+  color: #7A3FFF;
+}
+main .main-content .left-content .bottoms .bottom2 .code .kw {
+  color: #B794FF;
+}
+main .main-content .left-content .bottoms .bottom2 .code .op {
+  color: #B794FF;
+}
+main .main-content .left-content .bottoms .bottom2 .code .arrow {
+  color: #B794FF;
+}
+main .main-content .left-content .bottoms .bottom2 .code .fn {
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #B794FF;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+main .main-content .left-content .bottoms .bottom2 .post__actions {
+  display: flex;
+  justify-content: space-between;
+  max-width: 320px;
+  margin: 20px auto 0;
+}
+main .main-content .left-content .bottoms .bottom2 .post__actions button {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .main-content .left-content .bottoms .bottom2 .post__actions svg {
+  width: 20px;
+  height: 20px;
+  opacity: 0.75;
+  stroke: var(--ink);
 }
 main .main-content .left-content .bottoms .bottom2:hover {
   transform: scale(1.02);

@@ -157,13 +157,13 @@ main {
         }
         .callout {
           font-size: clamp(13px, 1.6vw, 24px);
-          color: black;
+          color: var(--ink);
           .light-txt {
             color: $secondary-color;
           }
           .big-txt {
             a {
-              border-bottom: 5px solid $primary-color;
+              border-bottom: 5px solid var(--ink);
               width: fit-content;
               text-decoration: none;
               color: $primary-color;
@@ -183,10 +183,10 @@ main {
       .bottoms {
         flex: 1;
         display: flex;
+        align-items: stretch;
         gap: 24px;
         .bottom {
           flex: 1;
-          height: 100%;
           @include border(var(--border-color));
           display: flex;
           flex-direction: column;
@@ -198,7 +198,7 @@ main {
           }
           .title-left-cornor {
             text-align: center;
-            color: black;
+            color: var(--ink);
             .light-txt {
               color: $secondary-color;
             }
@@ -224,13 +224,132 @@ main {
         }
         .bottom2 {
           flex: 1;
-          height: 100%;
+          max-height: 100%;
+          overflow-y: auto;
           @include border(var(--border-color));
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          gap: 32px;
+          .post {
+            padding: 24px;
+          }
+
+          .post__header {
+            display: flex;
+            gap: 14px;
+          }
+
+          .avatar {
+            width: 52px;
+            height: 52px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: #f1f0ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg {
+              width: 32px;
+              height: 32px;
+            }
+          }
+
+          .post__meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+            font-size: 17px;
+            color: var(--ink);
+            svg {
+              width: 16px;
+              height: 16px;
+            }
+          }
+
+          .post__meta .name {
+            font-weight: 600;
+          }
+
+          .post__meta .handle,
+          .post__meta .date {
+            color: var(--muted);
+            font-weight: 500;
+          }
+
+          .post__title {
+            margin-top: 2px;
+            font-size: 19px;
+            line-height: 1.4;
+            color: var(--ink);
+          }
+
+          .post__quote {
+            margin: 14px 0 12px;
+            font-size: 15px;
+            line-height: 1.4;
+            color: #b9b9c2;
+          }
+
+          .code {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px 16px;
+            font-family: "Fira Code", "JetBrains Mono", monospace;
+            font-size: 15px;
+            line-height: 1.5;
+            color: var(--ink);
+            a {
+              text-decoration: none;
+              color: $primary-color;
+            }
+          }
+
+          .code .kw {
+            color: $secondary-color;
+          }
+          .code .op {
+            color: $secondary-color;
+          }
+          .code .arrow {
+            color: $secondary-color;
+          }
+          .code .fn {
+            font-weight: 700;
+            font-size: 1.5em;
+            color: $secondary-color;
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            text-underline-offset: 6px;
+          }
+
+          .post__actions {
+            display: flex;
+            justify-content: space-between;
+            max-width: 320px;
+            margin: 20px auto 0;
+            
+            
+          }
+
+          .post__actions button {
+            background: none;
+            border: none;
+            padding: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+          }
+
+          .post__actions svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.75;
+            stroke: var(--ink);
+          }
           &:hover {
             transform: scale($scale-content);
           }
