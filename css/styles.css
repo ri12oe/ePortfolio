@@ -35,7 +35,6 @@ html.dark-mode .icon-sun {
 html,
 body {
   min-height: 100%;
-  padding: 18px;
 }
 
 body {
@@ -43,6 +42,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 18px;
 }
 
 h1,
@@ -58,9 +58,10 @@ p {
 header nav {
   min-height: 72px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 24px;
 }
 header nav .glow-hover {
   position: relative;
@@ -163,4 +164,21 @@ header nav .glow-hover.modes button svg {
 }
 header nav .glow-hover.modes:hover {
   transform: scale(1.06);
+}
+
+main .main-content {
+  background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+main .main-content .left-content {
+  background-color: green;
+  flex: 1 1 65%;
+  min-width: 300px;
+}
+main .main-content .right-content {
+  background-color: purple;
+  flex: 1 1 35%;
+  min-width: 250px;
 }

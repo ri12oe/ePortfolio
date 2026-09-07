@@ -2,9 +2,10 @@ header {
   nav {
     min-height: 72px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 24px;
     .glow-hover {
       position: relative;
       overflow: hidden;
@@ -55,7 +56,6 @@ header {
           a {
             font-size: 18px;
             color: var(--text-color);
-            
           }
         }
         &:hover {
@@ -103,3 +103,33 @@ header {
     }
   }
 }
+
+main {
+  .main-content {
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    .left-content {
+      background-color: green;
+      flex: 1 1 65%;
+      min-width: 300px;
+    }
+    .right-content {
+        background-color: purple;
+        flex: 1 1 35%;
+        min-width: 250px;
+    }
+  }
+}
+
+// @media (max-width: 768px) {
+//   main .main-content {
+//     flex-direction: column;
+//     .left-content,
+//     .right-content {
+//       flex-basis: 100%;
+//       width: 100%;
+//     }
+//   }
+// }

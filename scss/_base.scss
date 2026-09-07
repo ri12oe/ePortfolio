@@ -6,7 +6,6 @@
 html,
 body {
   min-height: 100%;
-  padding: 18px;
 }
 
 body {
@@ -14,6 +13,8 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 18px;
+
 }
 
 h1,
