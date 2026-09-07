@@ -1,0 +1,8 @@
+@mixin border($color-txt) {
+  background-color: $color-txt;
+  border: 1px solid $color-txt;
+  border-radius: $border-primary;
+  box-shadow: $primary-shadow;
+}
+
+

@@ -4,6 +4,8 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
+
     .logo {
       display: flex;
       align-items: flex-end;
@@ -11,10 +13,7 @@ header {
       min-width: 400px;
       height: 120px;
       gap: 5px;
-      background-color: #faf9f6;
-      border: 1px solid #faf9f6;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      @include border($off-white);
 
       a {
         text-decoration: none;
@@ -25,7 +24,6 @@ header {
       }
       .home-label {
         font-weight: lighter;
-        // color: #7A3FFF;
         color: black;
         a {
           font-size: 18px;
@@ -33,10 +31,7 @@ header {
       }
     }
     .idea {
-      background-color: #faf9f6;
-      border: 1px solid #faf9f6;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      @include border($off-white);
       height: 120px;
       min-width: 500px;
       display: flex;
@@ -53,16 +48,18 @@ header {
     .modes {
       height: 120px;
       min-width: 200px;
-      background-color: #faf9f6;
-      border:  1px solid #faf9f6;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      @include border($off-white);
       display: flex;
       justify-content: center;
       align-items: center;
-      svg {
+      button {
+        border: none;
+        background-color: #faf9f6;
+        cursor: pointer;
+        svg {
         width: 42px;
         height: 42px;
+      }
       }
     }
   }

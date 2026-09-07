@@ -29,6 +29,7 @@ header nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
 }
 header nav .logo {
   display: flex;
@@ -84,7 +85,12 @@ header nav .modes {
   justify-content: center;
   align-items: center;
 }
-header nav .modes svg {
+header nav .modes button {
+  border: none;
+  background-color: #faf9f6;
+  cursor: pointer;
+}
+header nav .modes button svg {
   width: 42px;
   height: 42px;
 }
