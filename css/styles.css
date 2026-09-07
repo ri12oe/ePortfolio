@@ -51,11 +51,11 @@ header nav .logo a svg {
   height: 120px;
 }
 header nav .logo .home-label {
-  font-weight: lighter;
-  color: black;
+  font-weight: 300;
 }
 header nav .logo .home-label a {
   font-size: 18px;
+  color: black;
 }
 header nav .idea {
   background-color: #faf9f6;
@@ -71,7 +71,7 @@ header nav .idea {
 header nav .idea a {
   text-decoration: none;
   color: #6e6e6e;
-  font-weight: 500px;
+  font-weight: 500;
   font-size: 42px;
 }
 header nav .modes {
