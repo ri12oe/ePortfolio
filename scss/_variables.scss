@@ -8,9 +8,13 @@ $border-primary: 15px;
 
 $primary-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
+$secondary-shadow: 0 4px 12px rgba(254, 253, 253, 0.3);
+
 $scale: 1.06;
 
 $scale-content: 1.02;
+
+
 
 
 :root {
@@ -24,6 +28,8 @@ $scale-content: 1.02;
     --muted: #6e6e6e;
     --purple: #{$primary-color};
     --border: #e5e5e5;
+    --border-line: #{$primary-color};
+    --box-shadow: #{$primary-shadow};
 }
 
 html.dark-mode {
@@ -37,6 +43,8 @@ html.dark-mode {
     --muted: #9a9a9a;
     --purple: #{$primary-color};
     --border: #e5e5e5;
+    --border-line: #{$secondary-color};
+    --box-shadow: #{$secondary-shadow};
 }
 
 .icon-sun {

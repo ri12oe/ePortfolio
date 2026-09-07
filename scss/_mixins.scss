@@ -2,7 +2,7 @@
   background-color: $color-txt;
   border: 1px solid $color-txt;
   border-radius: $border-primary;
-  box-shadow: $primary-shadow;
+  box-shadow: var(--box-shadow);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
 

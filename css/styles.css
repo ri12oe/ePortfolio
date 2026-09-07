@@ -9,6 +9,8 @@
   --muted: #6e6e6e;
   --purple: #7A3FFF;
   --border: #e5e5e5;
+  --border-line: #7A3FFF;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 html.dark-mode {
@@ -22,6 +24,8 @@ html.dark-mode {
   --muted: #9a9a9a;
   --purple: #7A3FFF;
   --border: #e5e5e5;
+  --border-line: #B794FF;
+  --box-shadow: 0 4px 12px rgba(254, 253, 253, 0.3);
 }
 
 .icon-sun {
@@ -105,7 +109,7 @@ header nav .glow-hover.logo {
   background-color: var(--border-color);
   border: 1px solid var(--border-color);
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--box-shadow);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
 header nav .glow-hover.logo a {
@@ -133,7 +137,7 @@ header nav .glow-hover.idea {
   background-color: var(--border-color);
   border: 1px solid var(--border-color);
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--box-shadow);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   height: 120px;
   min-width: 500px;
@@ -156,7 +160,7 @@ header nav .glow-hover.modes {
   background-color: var(--border-color);
   border: 1px solid var(--border-color);
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--box-shadow);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   display: flex;
   justify-content: center;
@@ -221,7 +225,7 @@ main .main-content .left-content .top {
   background-color: var(--border-color);
   border: 1px solid var(--border-color);
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--box-shadow);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
 main .main-content .left-content .top:hover {
@@ -241,7 +245,7 @@ main .main-content .left-content .top .callout .light-txt {
   color: #B794FF;
 }
 main .main-content .left-content .top .callout .big-txt a {
-  border-bottom: 5px solid var(--ink);
+  border-bottom: 5px solid var(--border-line);
   width: fit-content;
   text-decoration: none;
   color: #7A3FFF;
@@ -266,7 +270,7 @@ main .main-content .left-content .bottoms .bottom {
   background-color: var(--border-color);
   border: 1px solid var(--border-color);
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--box-shadow);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   display: flex;
   flex-direction: column;
@@ -288,7 +292,7 @@ main .main-content .left-content .bottoms .bottom .title-left-cornor .dark-purpl
   color: #7A3FFF;
 }
 main .main-content .left-content .bottoms .bottom .title-left-cornor .big-txt a {
-  border-bottom: 5px solid #7A3FFF;
+  border-bottom: 5px solid var(--border-line);
   width: fit-content;
   text-decoration: none;
   color: #7A3FFF;
@@ -307,7 +311,7 @@ main .main-content .left-content .bottoms .bottom2 {
   background-color: var(--border-color);
   border: 1px solid var(--border-color);
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--box-shadow);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   display: flex;
   flex-direction: column;
@@ -425,7 +429,7 @@ main .main-content .right-content {
   background-color: var(--border-color);
   border: 1px solid var(--border-color);
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--box-shadow);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   flex: 1 1 calc(35% - 12px);
   min-width: 250px;
@@ -441,7 +445,25 @@ main .main-content .right-content .about-me-content {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 24px;
+  padding: 32px;
+  text-align: center;
   gap: 24px;
+}
+main .main-content .right-content .about-me-content .bold-txt {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 32px;
+}
+main .main-content .right-content .about-me-content .bold-purple-txt {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 18px;
+}
+main .main-content .right-content .about-me-content .gray-txt {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 16px;
 }
 main .main-content .right-content .about-me-content .image-containter {
   background-image: url(../images/me.jpg);
@@ -452,7 +474,7 @@ main .main-content .right-content .about-me-content .image-containter {
   background-repeat: no-repeat;
 }
 main .main-content .right-content .about-me-content .big-txt a {
-  border-bottom: 5px solid var(--ink);
+  border-bottom: 5px solid var(--border-line);
   width: fit-content;
   text-decoration: none;
   color: #7A3FFF;
@@ -460,6 +482,7 @@ main .main-content .right-content .about-me-content .big-txt a {
   font-size: clamp(16px, 2.5vw, 42px);
   text-transform: uppercase;
 }
+
 @media (max-width: 992px) {
   header nav .glow-hover.logo {
     min-width: 300px;

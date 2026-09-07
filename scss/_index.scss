@@ -163,7 +163,7 @@ main {
           }
           .big-txt {
             a {
-              border-bottom: 5px solid var(--ink);
+              border-bottom: 5px solid var(--border-line);
               width: fit-content;
               text-decoration: none;
               color: $primary-color;
@@ -207,7 +207,7 @@ main {
             }
             .big-txt {
               a {
-                border-bottom: 5px solid $primary-color;
+                border-bottom: 5px solid var(--border-line);
                 width: fit-content;
                 text-decoration: none;
                 color: $primary-color;
@@ -368,7 +368,25 @@ main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        font-size: 24px;
+        padding: 32px;
+        text-align: center;
         gap: 24px;
+        .bold-txt {
+            color: var(--ink);
+            font-weight: 600;
+            font-size: 32px;
+        }
+        .bold-purple-txt {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 18px;
+        }
+        .gray-txt {
+            color: var(--muted);
+            font-weight: 400;
+            font-size: 16px;
+        }
         .image-containter {
             background-image: url(../images/me.jpg);
             width: 550px;
@@ -379,7 +397,7 @@ main {
         }
         .big-txt {
           a {
-            border-bottom: 5px solid var(--ink);
+            border-bottom: 5px solid var(--border-line);
             width: fit-content;
             text-decoration: none;
             color: $primary-color;
@@ -388,9 +406,7 @@ main {
             text-transform: uppercase;
           }
         }
-        .about-subcontent {
-
-        }
+        
       }
     }
   }
