@@ -1,0 +1,16 @@
+{
+  "name": "eportfolio",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "serve": "live-server",
+    "compile:sass": "sass scss/styles.scss css/styles.css -w --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.104.0"
+  }
+}
