@@ -143,41 +143,41 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         padding: 32px;
         @include border(var(--border-color));
         &:hover {
           transform: scale($scale-content);
         }
         .title {
-            font-size: clamp(24px, 4vw, 62px);
-            text-align: left;
-            font-weight: 200;
-            line-height: 1.2;
+          font-size: clamp(24px, 4vw, 62px);
+          text-align: left;
+          font-weight: 200;
+          line-height: 1.2;
         }
         .callout {
-            font-size: clamp(13px, 1.6vw, 24px);
-            color: black;
-            .light-txt {
-                color: $secondary-color;
+          font-size: clamp(13px, 1.6vw, 24px);
+          color: black;
+          .light-txt {
+            color: $secondary-color;
+          }
+          .big-txt {
+            a {
+              border-bottom: 5px solid $primary-color;
+              width: fit-content;
+              text-decoration: none;
+              color: $primary-color;
+              font-weight: 800;
+              font-size: clamp(16px, 2.5vw, 42px);
+              text-transform: uppercase;
             }
-            .big-txt {
-                a {
-                    border-bottom: 5px solid $primary-color;
-                    width: fit-content;
-                    text-decoration: none;
-                    color: $primary-color;
-                    font-weight: 800;
-                    font-size: clamp(16px, 2.5vw, 42px);
-                    text-transform: uppercase;
-                }
-            }
-            .dark-purple-mark {
-                color: $primary-color;
-            }
-            .light-purple-mark {
-                color: $secondary-color;
-            }
+          }
+          .dark-purple-mark {
+            color: $primary-color;
+          }
+          .light-purple-mark {
+            color: $secondary-color;
+          }
         }
       }
       .bottoms {
@@ -188,6 +188,49 @@ main {
           flex: 1;
           height: 100%;
           @include border(var(--border-color));
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 32px;
+          &:hover {
+            transform: scale($scale-content);
+          }
+          .title-left-cornor {
+            text-align: center;
+            color: black;
+            .light-txt {
+              color: $secondary-color;
+            }
+            .dark-purple-mark {
+              color: $primary-color;
+            }
+            .big-txt {
+              a {
+                border-bottom: 5px solid $primary-color;
+                width: fit-content;
+                text-decoration: none;
+                color: $primary-color;
+                font-weight: 800;
+                font-size: clamp(16px, 2.5vw, 42px);
+                text-transform: uppercase;
+              }
+            }
+          }
+          svg {
+            width: 70px;
+            height: auto;
+          }
+        }
+        .bottom2 {
+          flex: 1;
+          height: 100%;
+          @include border(var(--border-color));
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 32px;
           &:hover {
             transform: scale($scale-content);
           }
@@ -204,7 +247,6 @@ main {
     }
   }
 }
-
 
 @media (max-width: 992px) {
   header nav {
