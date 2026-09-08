@@ -43,7 +43,7 @@ main {
       }
     }
     .right-about-content {
-      // @include border(var(--border-color));
+      @include border(var(--border-color));
       flex: 1 1 calc(35% - 12px);
       min-width: 250px;
       display: flex;

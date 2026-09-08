@@ -18,7 +18,7 @@ html.dark-mode {
   --bg-color: black;
   --text-color: #f5f5f5;
   --primary-color: #7A3FFF;
-  --border-color: #3a3a3a;
+  --border-color: 0 0% 3.9%;
   --logo-accent: #ffffff;
   --card: #1e1e1e;
   --ink: #f5f5f5;
@@ -688,6 +688,11 @@ main .about-content .left-about-content:hover {
   transform: scale(1.02);
 }
 main .about-content .right-about-content {
+  background-color: var(--border-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   flex: 1 1 calc(35% - 12px);
   min-width: 250px;
   display: flex;
