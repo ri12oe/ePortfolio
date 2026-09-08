@@ -181,6 +181,7 @@ main {
         @include border(var(--border-color));
         min-width: 50%;
         min-height: 500px;
+      
       }
     }
     .lower-content {
