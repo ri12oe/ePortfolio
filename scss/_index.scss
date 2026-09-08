@@ -407,6 +407,7 @@ main {
           background-position: center;
           background-size: cover;
           background-repeat: no-repeat;
+          @include border(var(--border-color));
         }
         .big-txt {
           a {
