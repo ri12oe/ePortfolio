@@ -71,6 +71,123 @@ p {
   margin-bottom: 16px;
 }
 
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.42);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sheet {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 21;
+  width: min(560px, 100% - 32px);
+  padding: 32px;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  background: var(--card);
+  box-shadow: var(--box-shadow);
+  color: var(--ink);
+  opacity: 0;
+  transform: translate(-50%, 24px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.sheet.open {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+.sheet__handle {
+  display: block;
+  width: 42px;
+  height: 4px;
+  padding: 0;
+  margin: 0 auto 24px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--muted);
+  cursor: pointer;
+  touch-action: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.sheet__handle:hover, .sheet__handle:focus-visible {
+  background: var(--primary-color);
+  transform: scaleX(1.15);
+}
+.sheet__handle:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+}
+.sheet h2 {
+  color: var(--primary-color);
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.sheet__sub {
+  color: var(--muted);
+}
+.sheet .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.sheet .field label {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+.sheet .field input,
+.sheet .field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-color);
+  color: var(--ink);
+  font: inherit;
+}
+.sheet .field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.sheet .field input:focus,
+.sheet .field textarea:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+.sheet__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+.sheet__actions button {
+  padding: 10px 18px;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  font: inherit;
+  cursor: pointer;
+}
+.sheet__actions .btn-cancel {
+  background: transparent;
+  color: var(--ink);
+}
+.sheet__actions .btn-submit {
+  background: var(--primary-color);
+  color: #fff;
+}
+
 header nav {
   min-height: 72px;
   display: flex;
@@ -688,16 +805,13 @@ main .about-content .left-about-content:hover {
   transform: scale(1.02);
 }
 main .about-content .right-about-content {
-  background-color: var(--border-color);
-  border: 1px solid var(--border-color);
-  border-radius: 15px;
-  box-shadow: var(--box-shadow);
-  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   flex: 1 1 calc(35% - 12px);
   min-width: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 24px;
   padding: 32px;
 }
 main .about-content .right-about-content .image-containter {
@@ -715,6 +829,41 @@ main .about-content .right-about-content .image-containter {
 }
 main .about-content .right-about-content .image-containter:hover {
   transform: scale(1.02);
+}
+main .about-content .right-about-content .status-card {
+  background: var(--card);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+}
+main .about-content .right-about-content .status-card:hover {
+  transform: scale(1.02);
+}
+main .about-content .right-about-content .pulse-dot {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+main .about-content .right-about-content .pulse-dot::before, main .about-content .right-about-content .pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #34d399;
+}
+main .about-content .right-about-content .pulse-dot::before {
+  animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 main .goals-content {
   width: 100%;
