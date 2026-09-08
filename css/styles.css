@@ -695,9 +695,6 @@ main .about-content .right-about-content {
   align-items: center;
   padding: 32px;
 }
-main .about-content .right-about-content:hover {
-  transform: scale(1.02);
-}
 main .about-content .right-about-content .image-containter {
   background-image: url(../images/me.jpg);
   width: 420px;
@@ -710,6 +707,9 @@ main .about-content .right-about-content .image-containter {
   border-radius: 15px;
   box-shadow: var(--box-shadow);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+}
+main .about-content .right-about-content .image-containter:hover {
+  transform: scale(1.02);
 }
 main .goals-content {
   width: 100%;
@@ -798,6 +798,9 @@ main .moreInfro .upper-content .left-info-content {
   font-size: 18px;
   align-self: flex-start;
 }
+main .moreInfro .upper-content .left-info-content:hover {
+  transform: scale(1.02);
+}
 main .moreInfro .upper-content .left-info-content .global-card {
   width: 100%;
   padding: 40px;
@@ -811,8 +814,8 @@ main .moreInfro .upper-content .left-info-content .global-card .location-label {
   align-items: center;
   gap: 8px;
   color: var(--primary-color);
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 24px;
   align-self: flex-start;
 }
 main .moreInfro .upper-content .left-info-content .global-card .global-wrap {
@@ -844,14 +847,16 @@ main .moreInfro .upper-content .right-info-content {
   justify-content: center;
   gap: 24px;
 }
+main .moreInfro .upper-content .right-info-content:hover {
+  transform: scale(1.02);
+}
 main .moreInfro .upper-content .right-info-content .right-title {
   display: flex;
   align-items: center;
   gap: 10px;
   color: var(--primary-color);
   font-size: 24px;
-  font-weight: 700;
-  padding-bottom: 20px;
+  font-weight: 400;
   border-bottom: 1px solid var(--primary-color);
   width: fit-content;
 }
@@ -910,6 +915,34 @@ main .moreInfro .lower-content .left-lower {
   min-width: 50%;
   min-height: 250px;
 }
+main .moreInfro .lower-content .left-lower:hover {
+  transform: scale(1.02);
+}
+main .moreInfro .lower-content .left-lower .left-lower-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+}
+main .moreInfro .lower-content .left-lower .left-lower-content .lower-content-title {
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: 400;
+  border-bottom: 1px solid var(--primary-color);
+  width: fit-content;
+}
+main .moreInfro .lower-content .left-lower .left-lower-content .lower-content-section {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+main .moreInfro .lower-content .left-lower .left-lower-content .lower-content-section .type-icon:hover {
+  transform: scale(1.02);
+}
 main .moreInfro .lower-content .right-lowers {
   width: 100%;
   display: flex;
@@ -923,6 +956,36 @@ main .moreInfro .lower-content .right-lowers .right-lower {
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   min-width: 50%;
   min-height: 250px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+main .moreInfro .lower-content .right-lowers .right-lower:hover {
+  transform: scale(1.02);
+}
+main .moreInfro .lower-content .right-lowers .right-lower .right-lower-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: 400;
+  border-bottom: 1px solid var(--primary-color);
+  width: fit-content;
+}
+main .moreInfro .lower-content .right-lowers .right-lower .right-lower-title svg {
+  flex-shrink: 0;
+}
+main .moreInfro .lower-content .right-lowers .right-lower .right-lower-hr {
+  color: var(--ink);
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+}
+main .moreInfro .lower-content .right-lowers .right-lower .right-lower-hr svg {
+  width: 82px;
+  height: 82px;
 }
 
 @media (max-width: 600px) {

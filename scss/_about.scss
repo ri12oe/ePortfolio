@@ -50,9 +50,7 @@ main {
       justify-content: center;
       align-items: center;
       padding: 32px;
-      &:hover {
-        transform: scale($scale-content);
-      }
+
       .image-containter {
         background-image: url(../images/me.jpg);
         width: 420px;
@@ -61,6 +59,9 @@ main {
         background-size: cover;
         background-repeat: no-repeat;
         @include border(var(--border-color));
+        &:hover {
+          transform: scale($scale-content);
+        }
       }
     }
   }
@@ -146,6 +147,9 @@ main {
         font-weight: 600;
         font-size: 18px;
         align-self: flex-start;
+        &:hover {
+          transform: scale($scale-content);
+        }
         .global-card {
           width: 100%;
           padding: 40px;
@@ -158,8 +162,8 @@ main {
             align-items: center;
             gap: 8px;
             color: var(--primary-color);
-            font-weight: 600;
-            font-size: 18px;
+            font-weight: 400;
+            font-size: 24px;
             align-self: flex-start;
           }
           .global-wrap {
@@ -169,7 +173,7 @@ main {
             display: flex;
             justify-content: center;
             align-items: center;
-            filter: drop-shadow(0 8px 30px rgba(0,0,0,0.35));
+            filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.35));
             .globe-canvas {
               width: 100%;
               height: 100%;
@@ -188,14 +192,16 @@ main {
         flex-direction: column;
         justify-content: center;
         gap: 24px;
+        &:hover {
+          transform: scale($scale-content);
+        }
         .right-title {
           display: flex;
           align-items: center;
           gap: 10px;
           color: var(--primary-color);
           font-size: 24px;
-          font-weight: 700;
-          padding-bottom: 20px;
+          font-weight: 400;
           border-bottom: 1px solid var(--primary-color);
           width: fit-content;
           svg {
@@ -220,7 +226,9 @@ main {
             font-size: 18px;
             font-weight: 500;
             width: fit-content;
-            transition: background-color 0.2s ease, transform 0.2s ease;
+            transition:
+              background-color 0.2s ease,
+              transform 0.2s ease;
             &:hover {
               background-color: var(--card);
               transform: translateX(4px);
@@ -241,7 +249,6 @@ main {
               stroke-width: 1.8;
               stroke-linecap: round;
               stroke-linejoin: round;
-              
             }
           }
         }
@@ -255,6 +262,37 @@ main {
         @include border(var(--border-color));
         min-width: 50%;
         min-height: 250px;
+        &:hover {
+          transform: scale($scale-content);
+        }
+        .left-lower-content {
+          padding: 32px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 24px;
+
+          .lower-content-title {
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: 400;
+            border-bottom: 1px solid var(--primary-color);
+            width: fit-content;
+          }
+          .lower-content-section {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            .type-icon {
+              &:hover {
+                transform: scale($scale-content);
+              }
+            }
+          }
+        }
       }
       .right-lowers {
         width: 100%;
@@ -264,6 +302,36 @@ main {
           @include border(var(--border-color));
           min-width: 50%;
           min-height: 250px;
+          padding: 32px;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          &:hover {
+            transform: scale($scale-content);
+          }
+          .right-lower-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: 400;
+            border-bottom: 1px solid var(--primary-color);
+            width: fit-content;
+            svg {
+              flex-shrink: 0;
+            }
+          }
+          .right-lower-hr {
+            color: var(--ink);
+            font-size: 42px;
+            font-weight: 700;
+            text-align: center;
+            svg {
+              width: 82px;
+              height: 82px;
+            }
+          }
         }
       }
     }
