@@ -72,6 +72,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 32px;
     .goal-title {
       color: var(--primary-color);
       border-bottom: 5px solid var(--border-line);
@@ -121,6 +122,15 @@ main {
     &:hover {
       transform: scale($scale-content);
     }
+  }
+  .moreInfro {
+    @include border(var(--border-color));
+    width: 100%;
+    padding: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
 

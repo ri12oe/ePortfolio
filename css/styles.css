@@ -728,6 +728,7 @@ main .goals-content {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 32px;
 }
 main .goals-content .goal-title {
   color: var(--primary-color);
@@ -777,6 +778,19 @@ main .goals-content .goal-cards .goal-card:hover {
 }
 main .goals-content:hover {
   transform: scale(1.02);
+}
+main .moreInfro {
+  background-color: var(--border-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  width: 100%;
+  padding: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media (max-width: 600px) {
