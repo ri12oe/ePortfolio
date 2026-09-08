@@ -775,6 +775,9 @@ main .goals-content .goal-cards .goal-card .goal-details {
 main .goals-content .goal-cards .goal-card:hover {
   transform: scale(1.02);
 }
+main .goals-content:hover {
+  transform: scale(1.02);
+}
 
 @media (max-width: 600px) {
   main .goals-content {

@@ -114,9 +114,12 @@ main {
           line-height: 1.6;
         }
         &:hover {
-        transform: scale($scale-content);
+          transform: scale($scale-content);
+        }
       }
-      }
+    }
+    &:hover {
+      transform: scale($scale-content);
     }
   }
 }
