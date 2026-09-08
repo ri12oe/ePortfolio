@@ -132,10 +132,12 @@ main {
     .upper-content {
       width: 100%;
       display: flex;
+      align-items: stretch;
       gap: 24px;
       .left-info-content {
         @include border(var(--border-color));
-        min-width: 50%;
+        flex: 1 1 0;
+        min-width: 0;
         min-height: 500px;
         display: flex;
         align-items: center;
@@ -146,7 +148,7 @@ main {
         align-self: flex-start;
         .global-card {
           width: 100%;
-          padding: 62px;
+          padding: 40px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -155,13 +157,14 @@ main {
             display: flex;
             align-items: center;
             gap: 8px;
-            color: var(--ink);
+            color: var(--primary-color);
             font-weight: 600;
             font-size: 18px;
             align-self: flex-start;
           }
           .global-wrap {
             width: 100%;
+            max-width: 440px;
             aspect-ratio: 1 / 1;
             display: flex;
             justify-content: center;
@@ -170,8 +173,6 @@ main {
             .globe-canvas {
               width: 100%;
               height: 100%;
-              max-width: 440px;
-              max-height: 440px;
               touch-action: none;
             }
           }
@@ -179,9 +180,71 @@ main {
       }
       .right-info-content {
         @include border(var(--border-color));
-        min-width: 50%;
+        flex: 1 1 0;
+        min-width: 0;
         min-height: 500px;
-      
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+        .right-title {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: var(--primary-color);
+          font-size: 24px;
+          font-weight: 700;
+          padding-bottom: 20px;
+          border-bottom: 1px solid var(--primary-color);
+          width: fit-content;
+          svg {
+            flex-shrink: 0;
+          }
+        }
+
+        .right-links {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .right-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-height: 52px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            width: fit-content;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            &:hover {
+              background-color: var(--card);
+              transform: translateX(4px);
+              width: fit-content;
+            }
+
+            &:focus-visible {
+              outline: 2px solid var(--primary-color);
+              outline-offset: 3px;
+            }
+
+            svg {
+              flex-shrink: 0;
+              width: 24px;
+              height: 24px;
+              fill: none;
+              stroke: currentColor;
+              stroke-width: 1.8;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              
+            }
+          }
+        }
       }
     }
     .lower-content {
@@ -208,6 +271,25 @@ main {
 }
 
 @media (max-width: 600px) {
+  main .moreInfro {
+    padding: 32px 20px;
+
+    .upper-content {
+      flex-direction: column;
+
+      .left-info-content,
+      .right-info-content {
+        width: 100%;
+        min-height: 0;
+      }
+
+      .left-info-content .global-card,
+      .right-info-content {
+        padding: 32px 24px;
+      }
+    }
+  }
+
   main .goals-content {
     padding: 32px 20px;
 
