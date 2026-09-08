@@ -688,11 +688,6 @@ main .about-content .left-about-content:hover {
   transform: scale(1.02);
 }
 main .about-content .right-about-content {
-  background-color: var(--border-color);
-  border: 1px solid var(--border-color);
-  border-radius: 15px;
-  box-shadow: var(--box-shadow);
-  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   flex: 1 1 calc(35% - 12px);
   min-width: 250px;
   display: flex;
@@ -717,11 +712,6 @@ main .about-content .right-about-content .image-containter {
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
 main .goals-content {
-  background-color: var(--border-color);
-  border: 1px solid var(--border-color);
-  border-radius: 15px;
-  box-shadow: var(--box-shadow);
-  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   width: 100%;
   padding: 62px;
   display: flex;
@@ -776,21 +766,31 @@ main .goals-content .goal-cards .goal-card .goal-details {
 main .goals-content .goal-cards .goal-card:hover {
   transform: scale(1.02);
 }
-main .goals-content:hover {
-  transform: scale(1.02);
-}
 main .moreInfro {
-  background-color: var(--border-color);
-  border: 1px solid var(--border-color);
-  border-radius: 15px;
-  box-shadow: var(--box-shadow);
-  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   width: 100%;
   padding: 62px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  gap: 24px;
+}
+main .moreInfro .left-info-content {
+  background-color: var(--border-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  min-width: 50%;
+  min-height: 500px;
+}
+main .moreInfro .right-info-content {
+  background-color: var(--border-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  min-width: 50%;
+  min-height: 500px;
 }
 
 @media (max-width: 600px) {

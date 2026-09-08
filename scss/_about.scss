@@ -43,7 +43,7 @@ main {
       }
     }
     .right-about-content {
-      @include border(var(--border-color));
+      // @include border(var(--border-color));
       flex: 1 1 calc(35% - 12px);
       min-width: 250px;
       display: flex;
@@ -65,7 +65,7 @@ main {
     }
   }
   .goals-content {
-    @include border(var(--border-color));
+    // @include border(var(--border-color));
     width: 100%;
     padding: 62px;
     display: flex;
@@ -119,18 +119,25 @@ main {
         }
       }
     }
-    &:hover {
-      transform: scale($scale-content);
-    }
   }
   .moreInfro {
-    @include border(var(--border-color));
+    // @include border(var(--border-color));
     width: 100%;
     padding: 62px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    gap: 24px;
+    .left-info-content {
+      @include border(var(--border-color));
+      min-width: 50%;
+      min-height: 500px
+    }
+    .right-info-content {
+      @include border(var(--border-color));
+      min-width: 50%;
+      min-height: 500px;
+    }
   }
 }
 
