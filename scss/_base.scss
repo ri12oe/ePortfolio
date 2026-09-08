@@ -8,6 +8,10 @@ body {
   min-height: 100%;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     background-color: var(--bg-color);

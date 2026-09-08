@@ -53,6 +53,10 @@ body {
   min-height: 100%;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg-color);
@@ -302,6 +306,22 @@ header nav .glow-hover.modes:hover {
   transform: scale(1.06);
 }
 
+@media (max-width: 1100px) {
+  header nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 120px;
+    gap: 16px;
+  }
+  header nav .glow-hover.logo,
+  header nav .glow-hover.idea,
+  header nav .glow-hover.modes {
+    width: 100%;
+    min-width: 0;
+  }
+  header nav .glow-hover.modes {
+    min-width: 0;
+  }
+}
 .glow-hover {
   position: relative;
   overflow: hidden;
@@ -631,13 +651,18 @@ footer {
   border-radius: 15px;
   box-shadow: var(--box-shadow);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  container-type: inline-size;
   padding: 32px;
 }
 footer .upper {
   display: flex;
+  gap: 32px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 32px;
+}
+footer .upper .connects {
+  min-width: 0;
 }
 footer .upper .connects .connect-title {
   font-size: 24px;
@@ -646,6 +671,7 @@ footer .upper .connects .connect-title {
 }
 footer .upper .connects .links {
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
 }
 footer .upper .connects .links a {
@@ -655,6 +681,10 @@ footer .upper .connects .links a {
 footer .upper .connects .links a:hover {
   color: var(--border-line);
 }
+footer .upper .contact {
+  min-width: 0;
+  max-width: 650px;
+}
 footer .upper .contact .title-contact {
   font-size: 24px;
   font-weight: 500;
@@ -663,6 +693,7 @@ footer .upper .contact .title-contact {
 footer .upper .contact .contact-link {
   color: var(--ink);
   font-size: 24px;
+  overflow-wrap: anywhere;
 }
 footer .upper .contact .contact-link .contact-bold-txt a {
   border-bottom: 5px solid var(--border-line);
@@ -688,10 +719,85 @@ footer .upper .contact .contact-link .light-txt {
 footer .copyright {
   text-align: center;
   color: var(--muted);
-  font-size: 24px;
+  font-size: clamp(14px, 2vw, 24px);
+  line-height: 1.5;
   font-weight: 400;
 }
 
+@container (max-width: 760px) {
+  footer {
+    padding: 24px;
+  }
+  footer .upper {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 24px;
+  }
+  footer .upper .connects,
+  footer .upper .contact {
+    width: 100%;
+    max-width: none;
+  }
+  footer .upper .links {
+    gap: 12px 20px;
+  }
+  footer .upper .contact-link {
+    font-size: clamp(16px, 4vw, 24px);
+    line-height: 1.5;
+  }
+}
+@container (max-width: 440px) {
+  footer {
+    padding: 20px 16px;
+  }
+  footer .upper {
+    margin-bottom: 24px;
+  }
+  footer .upper .connects .connect-title,
+  footer .upper .contact .title-contact {
+    font-size: 20px;
+  }
+  footer .upper .connects .links a {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  footer {
+    padding: 24px;
+  }
+  footer .upper {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 24px;
+  }
+  footer .upper .connects,
+  footer .upper .contact {
+    width: 100%;
+    max-width: none;
+  }
+  footer .upper .links {
+    gap: 12px 20px;
+  }
+  footer .upper .contact-link {
+    font-size: clamp(16px, 4vw, 24px);
+    line-height: 1.5;
+  }
+}
+@media (max-width: 480px) {
+  footer {
+    padding: 20px 16px;
+  }
+  footer .upper {
+    margin-bottom: 24px;
+  }
+  footer .upper .connects .connect-title,
+  footer .upper .contact .title-contact {
+    font-size: 20px;
+  }
+  footer .upper .connects .links a {
+    font-size: 16px;
+  }
+}
 @media (max-width: 992px) {
   header nav .glow-hover.logo {
     min-width: 300px;
@@ -703,13 +809,26 @@ footer .copyright {
 @media (max-width: 768px) {
   header nav {
     justify-content: center;
+    grid-template-columns: minmax(0, 1fr) 120px;
     gap: 16px;
   }
-  header nav .glow-hover.logo,
-  header nav .glow-hover.idea,
-  header nav .glow-hover.modes {
-    min-width: unset;
+  header nav .glow-hover.logo {
+    grid-column: 1/-1;
+    min-width: 0;
     width: 100%;
+  }
+  header nav .glow-hover.idea {
+    grid-column: 1/2;
+    flex: none;
+    min-width: 0;
+    width: auto;
+  }
+  header nav .glow-hover.modes {
+    grid-column: 2/3;
+    flex: none;
+    min-width: 0;
+    width: 120px;
+    justify-self: stretch;
   }
   main .main-content {
     flex-direction: column;
@@ -744,10 +863,14 @@ footer .copyright {
   header nav .glow-hover.idea {
     min-width: unset;
     height: auto;
+    min-height: 72px;
   }
   header nav .glow-hover.modes {
     min-width: unset;
     height: auto;
+    min-height: 72px;
+    flex-basis: 72px;
+    width: 72px;
   }
   main .main-content .left-content .top {
     min-height: 220px;
@@ -931,7 +1054,9 @@ main .moreInfro {
 }
 main .moreInfro .upper-content {
   width: 100%;
+  min-width: 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: stretch;
   gap: 24px;
 }
@@ -943,6 +1068,8 @@ main .moreInfro .upper-content .left-info-content {
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   flex: 1 1 0;
   min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
   min-height: 500px;
   display: flex;
   align-items: center;
@@ -957,6 +1084,7 @@ main .moreInfro .upper-content .left-info-content:hover {
 }
 main .moreInfro .upper-content .left-info-content .global-card {
   width: 100%;
+  min-width: 0;
   padding: 40px;
   display: flex;
   justify-content: center;
@@ -973,7 +1101,7 @@ main .moreInfro .upper-content .left-info-content .global-card .location-label {
   align-self: flex-start;
 }
 main .moreInfro .upper-content .left-info-content .global-card .global-wrap {
-  width: 100%;
+  width: min(100%, 440px);
   max-width: 440px;
   aspect-ratio: 1/1;
   display: flex;
@@ -982,8 +1110,11 @@ main .moreInfro .upper-content .left-info-content .global-card .global-wrap {
   filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.35));
 }
 main .moreInfro .upper-content .left-info-content .global-card .global-wrap .globe-canvas {
+  display: block;
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   touch-action: none;
 }
 main .moreInfro .upper-content .right-info-content {
@@ -1018,6 +1149,7 @@ main .moreInfro .upper-content .right-info-content .right-title svg {
   flex-shrink: 0;
 }
 main .moreInfro .upper-content .right-info-content .right-links {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -1039,7 +1171,6 @@ main .moreInfro .upper-content .right-info-content .right-links .right-link {
 main .moreInfro .upper-content .right-info-content .right-links .right-link:hover {
   background-color: var(--card);
   transform: translateX(4px);
-  width: fit-content;
 }
 main .moreInfro .upper-content .right-info-content .right-links .right-link:focus-visible {
   outline: 2px solid var(--primary-color);
@@ -1142,6 +1273,48 @@ main .moreInfro .lower-content .right-lowers .right-lower .right-lower-hr svg {
   height: 82px;
 }
 
+@media (max-width: 1100px) {
+  main .about-content {
+    min-height: 0;
+  }
+  main .about-content .left-about-content,
+  main .about-content .right-about-content {
+    flex: 1 1 100%;
+    min-width: 0;
+    width: 100%;
+  }
+  main .about-content .left-about-content .about-section {
+    padding: 48px;
+  }
+  main .about-content .right-about-content {
+    padding: 32px;
+  }
+  main .about-content .right-about-content .image-containter {
+    width: min(100%, 420px);
+    height: min(520px, 58vw);
+    min-height: 360px;
+  }
+  main .moreInfro .lower-content {
+    flex-direction: column;
+  }
+  main .moreInfro .lower-content .left-lower,
+  main .moreInfro .lower-content .right-lowers,
+  main .moreInfro .lower-content .right-lowers .right-lower {
+    width: 100%;
+    min-width: 0;
+  }
+  main .moreInfro .lower-content .right-lowers {
+    display: flex;
+    gap: 24px;
+  }
+  main .moreInfro .lower-content .right-lowers .right-lower {
+    flex: 1 1 0;
+  }
+  main .moreInfro .lower-content .left-lower-content .lower-content-section {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
 @media (max-width: 600px) {
   main .moreInfro {
     padding: 32px 20px;
@@ -1151,8 +1324,10 @@ main .moreInfro .lower-content .right-lowers .right-lower .right-lower-hr svg {
   }
   main .moreInfro .upper-content .left-info-content,
   main .moreInfro .upper-content .right-info-content {
+    flex: 1 1 100%;
     width: 100%;
-    min-height: 0;
+    min-height: 420px;
+    height: auto;
   }
   main .moreInfro .upper-content .left-info-content .global-card,
   main .moreInfro .upper-content .right-info-content {
@@ -1167,4 +1342,148 @@ main .moreInfro .lower-content .right-lowers .right-lower .right-lower-hr svg {
   main .goals-content .goal-cards .goal-card {
     padding: 24px;
   }
+}
+@media (max-width: 992px) {
+  main .about-content .left-about-content {
+    flex-basis: 100%;
+  }
+  main .about-content .left-about-content .about-section {
+    padding: 40px;
+  }
+  main .about-content .right-about-content {
+    flex-basis: 100%;
+  }
+  main .about-content .right-about-content .image-containter {
+    width: min(100%, 420px);
+    height: min(600px, 70vw);
+    min-height: 360px;
+  }
+  main .goals-content,
+  main .moreInfro {
+    padding: 40px;
+  }
+  main .moreInfro .lower-content .left-lower,
+  main .moreInfro .lower-content .right-lowers {
+    min-width: 0;
+  }
+}
+@media (max-width: 768px) {
+  main .about-content {
+    min-height: 0;
+  }
+  main .about-content .left-about-content .about-section {
+    padding: 32px 24px;
+  }
+  main .about-content .left-about-content .about-section .subtitle {
+    font-size: 20px;
+  }
+  main .about-content .left-about-content .about-section .information {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  main .about-content .right-about-content {
+    padding: 24px;
+  }
+  main .about-content .right-about-content .image-containter {
+    height: min(520px, 120vw);
+  }
+  main .about-content .right-about-content .status-card {
+    width: 100%;
+    justify-content: center;
+  }
+  main .goals-content {
+    padding: 32px 24px;
+  }
+  main .goals-content .goal-cards {
+    grid-template-columns: 1fr;
+  }
+  main .goals-content .goal-cards .goal-card {
+    padding: 24px;
+  }
+  main .moreInfro {
+    padding: 32px 24px;
+  }
+  main .moreInfro .upper-content {
+    flex-direction: column;
+  }
+  main .moreInfro .upper-content .left-info-content,
+  main .moreInfro .upper-content .right-info-content {
+    flex: 1 1 100%;
+    width: 100%;
+    min-height: 420px;
+    height: auto;
+  }
+  main .moreInfro .upper-content .left-info-content .global-card,
+  main .moreInfro .upper-content .right-info-content {
+    padding: 32px 24px;
+  }
+  main .moreInfro .lower-content {
+    flex-direction: column;
+  }
+  main .moreInfro .lower-content .left-lower,
+  main .moreInfro .lower-content .right-lowers,
+  main .moreInfro .lower-content .right-lowers .right-lower {
+    width: 100%;
+    min-width: 0;
+  }
+  main .moreInfro .lower-content .right-lowers {
+    flex-direction: column;
+  }
+  main .moreInfro .lower-content .left-lower-content .lower-content-section {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 480px) {
+  main .about-content {
+    gap: 16px;
+  }
+  main .about-content .left-about-content .about-section {
+    padding: 24px 18px;
+  }
+  main .about-content .left-about-content .about-section .about-title,
+  main .about-content .left-about-content .about-section .subtitle {
+    font-size: 18px;
+  }
+  main .about-content .right-about-content {
+    padding: 18px;
+  }
+  main .about-content .right-about-content .image-containter {
+    height: 100vw;
+    min-height: 280px;
+    max-height: 420px;
+  }
+  main .about-content .right-about-content .status-card {
+    padding: 14px 18px;
+    font-size: 16px;
+  }
+  main .goals-content,
+  main .moreInfro {
+    padding: 24px 16px;
+  }
+  main .moreInfro .upper-content {
+    gap: 16px;
+  }
+  main .moreInfro .upper-content .left-info-content .global-card,
+  main .moreInfro .upper-content .right-info-content {
+    padding: 24px 18px;
+  }
+  main .moreInfro .upper-content .left-info-content,
+  main .moreInfro .upper-content .right-info-content {
+    min-height: 360px;
+  }
+  main .moreInfro .upper-content .left-info-content .global-card .location-label,
+  main .moreInfro .upper-content .right-info-content .right-title {
+    font-size: 20px;
+  }
+  main .moreInfro .lower-content {
+    gap: 16px;
+  }
+  main .moreInfro .lower-content .left-lower-content,
+  main .moreInfro .lower-content .right-lowers .right-lower {
+    padding: 24px 18px;
+  }
+}
+main .tem {
+  font-size: 42px;
+  color: var(--ink);
 }
