@@ -339,6 +339,10 @@
         <div class="glow-hover right-content">
           <div class="about-me-content">
             <div class="image-containter"></div>
+            <button type="button" class="status-card contact-trigger" id="availabilityTrigger">
+              <span class="pulse-dot"></span>
+              Available for work!
+            </button>
             <p class="big-txt"><a href="about.html">&lt;About /&gt;</a></p>
             <p class="" about-subcontent>
               Hi, I'm <span class="bold-txt">Mario Espinoza.</span> <br />
@@ -380,7 +384,32 @@
         Design & built by Mario Espinoza-Gutierrez - All rights reserved © 2026
       </section>
     </footer>
+    <div class="backdrop" id="contactBackdrop"></div>
+    <div class="sheet" id="contactSheet" role="dialog" aria-modal="true" aria-labelledby="contactSheetTitle">
+      <button type="button" class="sheet__handle" id="contactHandle" aria-label="Close contact form"></button>
+      <h2 id="contactSheetTitle">Contact me</h2>
+      <p class="sheet__sub">If you have any questions, please feel free to contact me.</p>
+      <form id="contactForm">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" required>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" required></textarea>
+        </div>
+        <div class="sheet__actions">
+          <button type="button" class="btn-cancel" id="contactCancelBtn">Cancel</button>
+          <button type="submit" class="btn-submit">Submit</button>
+        </div>
+      </form>
+    </div>
     <script src="js/glow.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/contact.js"></script>
   </body>
 </html>

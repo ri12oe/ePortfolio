@@ -428,6 +428,46 @@ main {
           background-repeat: no-repeat;
           @include border(var(--border-color));
         }
+        .status-card {
+          background: var(--card);
+          border: 1px solid var(--border-color);
+          border-radius: $border-primary;
+          box-shadow: var(--box-shadow);
+          padding: 18px 32px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-weight: 700;
+          font-size: 18px;
+          color: var(--ink);
+          cursor: pointer;
+          font-family: inherit;
+          transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+
+          &:hover {
+            transform: scale($scale-content);
+          }
+        }
+
+        .pulse-dot {
+          position: relative;
+          width: 14px;
+          height: 14px;
+          flex-shrink: 0;
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: #34d399;
+          }
+
+          &::before {
+            animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          }
+        }
         .big-txt {
           a {
             border-bottom: 5px solid var(--border-line);
