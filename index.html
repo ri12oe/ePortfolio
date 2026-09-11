@@ -139,7 +139,9 @@
                 <span class="dark-purple-mark">}</span>
                 <span class="light-txt">from '@IU Indy'</span>
                 <br />
-                <span class="big-txt"><a href="honors.html">IU Indy Honors</a></span>
+                <span class="big-txt"
+                  ><a href="honors.html">IU Indy Honors</a></span
+                >
               </p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -339,7 +341,11 @@
         <div class="glow-hover right-content">
           <div class="about-me-content">
             <div class="image-containter"></div>
-            <button type="button" class="status-card contact-trigger" id="availabilityTrigger">
+            <button
+              type="button"
+              class="status-card contact-trigger"
+              id="availabilityTrigger"
+            >
               <span class="pulse-dot"></span>
               Available for work!
             </button>
@@ -362,14 +368,28 @@
           <p class="connect-title">Connect</p>
           <div class="links">
             <a href="https://github.com/ri12oe">GitHub</a>
-            <a href="https://www.linkedin.com/in/mario-espinoza-gutierrez-442b382b8">Linkdln</a>
-            <a href="https://indiana.joinhandshake.com/profiles/wyzqc4">HandShake</a>
+            <a
+              href="https://www.linkedin.com/in/mario-espinoza-gutierrez-442b382b8"
+              >Linkdln</a
+            >
+            <a href="https://indiana.joinhandshake.com/profiles/wyzqc4"
+              >HandShake</a
+            >
           </div>
         </div>
         <div class="contact">
           <p class="title-contact">Get in touch</p>
           <p class="contact-link">
-            &lt;<span class="contact-bold-txt"><a href="#"> Contact </a>
+            &lt;<span class="contact-bold-txt">
+              <!-- <a href="#"> Contact </a> -->
+              <button
+                type="button"
+                class="status-card contact-trigger"
+                id="availabilityTrigger"
+              >
+                Contact
+              </button>
+            </span>
             <span class="light-txt">onSumbit =</span>
             <span class="dark-purple-mark">{</span>
             <span class="light-purple-mark">()</span>
@@ -385,25 +405,40 @@
       </section>
     </footer>
     <div class="backdrop" id="contactBackdrop"></div>
-    <div class="sheet" id="contactSheet" role="dialog" aria-modal="true" aria-labelledby="contactSheetTitle">
-      <button type="button" class="sheet__handle" id="contactHandle" aria-label="Close contact form"></button>
+    <div
+      class="sheet"
+      id="contactSheet"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contactSheetTitle"
+    >
+      <button
+        type="button"
+        class="sheet__handle"
+        id="contactHandle"
+        aria-label="Close contact form"
+      ></button>
       <h2 id="contactSheetTitle">Contact me</h2>
-      <p class="sheet__sub">If you have any questions, please feel free to contact me.</p>
+      <p class="sheet__sub">
+        If you have any questions, please feel free to contact me.
+      </p>
       <form id="contactForm">
         <div class="field">
           <label for="email">Email</label>
-          <input type="email" id="email" required>
+          <input type="email" id="email" required />
         </div>
         <div class="field">
           <label for="subject">Subject</label>
-          <input type="text" id="subject" required>
+          <input type="text" id="subject" required />
         </div>
         <div class="field">
           <label for="message">Message</label>
           <textarea id="message" required></textarea>
         </div>
         <div class="sheet__actions">
-          <button type="button" class="btn-cancel" id="contactCancelBtn">Cancel</button>
+          <button type="button" class="btn-cancel" id="contactCancelBtn">
+            Cancel
+          </button>
           <button type="submit" class="btn-submit">Submit</button>
         </div>
       </form>
