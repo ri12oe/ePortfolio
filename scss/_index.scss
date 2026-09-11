@@ -9,25 +9,29 @@ header {
     .glow-hover {
       position: relative;
       overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 
       &::before {
         content: "";
         position: absolute;
         pointer-events: none;
-        width: 180px;
-        height: 180px;
+        width: clamp(120px, 40%, 260px);
+        height: clamp(120px, 40%, 260px);
         background: radial-gradient(
           circle,
           var(--primary-color),
           transparent 70%
         );
-        left: var(--x);
-        top: var(--y);
+        left: var(--x, 50%);
+        top: var(--y, 50%);
         transform: translate(-50%, -50%);
         opacity: 0;
+        mix-blend-mode: soft-light;
+        will-change: opacity;
         transition: opacity 0.2s ease;
       }
-      &:hover::before {
+      &:hover::before,
+      &:focus-within::before {
         opacity: 1;
       }
       &.logo {
@@ -129,21 +133,34 @@ header {
 .glow-hover {
   position: relative;
   overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   &::before {
     content: "";
     position: absolute;
     pointer-events: none;
-    width: 180px;
-    height: 180px;
+    width: clamp(120px, 40%, 260px);
+    height: clamp(120px, 40%, 260px);
     background: radial-gradient(circle, var(--primary-color), transparent 70%);
-    left: var(--x);
-    top: var(--y);
+    left: var(--x, 50%);
+    top: var(--y, 50%);
     transform: translate(-50%, -50%);
     opacity: 0;
+    mix-blend-mode: soft-light;
+    will-change: opacity;
     transition: opacity 0.2s ease;
   }
-  &:hover::before {
+  &:hover::before,
+  &:focus-within::before {
     opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-hover {
+    transition: none;
+    &::before {
+      transition: none;
+    }
   }
 }
 
