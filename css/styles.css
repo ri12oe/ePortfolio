@@ -758,6 +758,9 @@ footer .copyright {
   line-height: 1.5;
   font-weight: 400;
 }
+footer:hover {
+  transform: scale(1.02);
+}
 
 @container (max-width: 760px) {
   footer {

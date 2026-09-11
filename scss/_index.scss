@@ -563,6 +563,9 @@ footer {
     line-height: 1.5;
     font-weight: 400;
   }
+  &:hover {
+    transform: scale($scale-content);
+  }
 }
 
 @container (max-width: 760px) {
