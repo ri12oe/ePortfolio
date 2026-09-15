@@ -1683,3 +1683,14 @@ main .project-content .project-cards .project-card {
   min-width: 359px;
   min-height: 572px;
 }
+main .project-content .project-cards .project-card:hover {
+  transform: scale(1.02);
+}
+main .project-content .project-cards .project-card .card-stacks {
+  display: flex;
+  gap: 5px;
+}
+main .project-content .project-cards .project-card .card-links svg {
+  width: 20px;
+  height: 20px;
+}

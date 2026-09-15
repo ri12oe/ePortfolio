@@ -42,12 +42,31 @@ main {
     }
     .project-cards {
       display: grid;
-       grid-template-columns: repeat(3, 1fr);
-       gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
       .project-card {
         @include border(--border-color);
         min-width: 359px;
         min-height: 572px;
+        &:hover {
+          transform: scale($scale-content);
+        }
+        .card-title {
+        }
+        .card-descp {
+        }
+        .card-stacks {
+          display: flex;
+          gap: 5px;
+          .card-stack {
+          }
+        }
+        .card-links {
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
       }
     }
   }
