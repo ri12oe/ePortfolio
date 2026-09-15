@@ -31,10 +31,12 @@ $scale-content: 1.02;
     --border-line: #{$primary-color};
     --box-shadow: #{$primary-shadow};
     --hover-color: black;
+    --black-root: black;
 }
 
 html.dark-mode {
     --bg-color: black;
+    --white-root: #f5f5f5;
     --text-color: #f5f5f5;
     --primary-color: #{$primary-color};
     --border-color: 0 0% 3.9%;

@@ -12,10 +12,12 @@
   --border-line: #7A3FFF;
   --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   --hover-color: black;
+  --black-root: black;
 }
 
 html.dark-mode {
   --bg-color: black;
+  --white-root: #f5f5f5;
   --text-color: #f5f5f5;
   --primary-color: #7A3FFF;
   --border-color: 0 0% 3.9%;
@@ -1682,15 +1684,115 @@ main .project-content .project-cards .project-card {
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   min-width: 359px;
   min-height: 572px;
+  padding: 24px;
 }
 main .project-content .project-cards .project-card:hover {
   transform: scale(1.02);
 }
+main .project-content .project-cards .project-card svg {
+  margin-bottom: 12px;
+}
+main .project-content .project-cards .project-card .card-header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 24px;
+}
+main .project-content .project-cards .project-card .card-header .card-title {
+  color: var(--ink);
+  font-size: 32px;
+  font-weight: 700;
+}
+main .project-content .project-cards .project-card .card-header .status {
+  background-color: #d1fae5;
+  border-radius: 10px;
+  gap: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  color: black;
+}
+main .project-content .project-cards .project-card .card-header .status .pulse-dot {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+main .project-content .project-cards .project-card .card-header .status .pulse-dot::before, main .project-content .project-cards .project-card .card-header .status .pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #34d399;
+}
+main .project-content .project-cards .project-card .card-header .status .pulse-dot::before {
+  animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+main .project-content .project-cards .project-card .card-descp {
+  color: var(--text-color);
+  font-weight: 400;
+}
 main .project-content .project-cards .project-card .card-stacks {
   display: flex;
-  gap: 5px;
+  gap: 12px;
+}
+main .project-content .project-cards .project-card .card-stacks .card-stack {
+  color: var(--bg-color);
+  background: var(--border-line);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+main .project-content .project-cards .project-card .card-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+main .project-content .project-cards .project-card .card-links button {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  border: 1px solid var(--bg-color);
+  border-radius: 15px;
+  padding: 8px 12px;
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+}
+main .project-content .project-cards .project-card .card-links button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+main .project-content .project-cards .project-card .card-links button:hover {
+  transform: scale(1.02);
 }
 main .project-content .project-cards .project-card .card-links svg {
   width: 20px;
   height: 20px;
+  display: block;
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+main .project-content .project-cards .project-card .card-links a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: var(--black-root);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  line-height: normal;
 }
