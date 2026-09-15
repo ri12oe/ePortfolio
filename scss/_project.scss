@@ -6,6 +6,8 @@ main {
     gap: 24px;
     min-height: 100vh;
     margin-bottom: 32px;
+    flex-direction: column;
+
     .project-header {
       display: flex;
       flex-direction: column;
@@ -15,6 +17,7 @@ main {
       height: fit-content;
       padding: 24px;
       @include border(--border-color);
+      margin-bottom: 32px;
       .project-title {
         font-size: 42px;
         font-weight: 800;
@@ -35,6 +38,16 @@ main {
       }
       &:hover {
         transform: scale($scale-content);
+      }
+    }
+    .project-cards {
+      display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 24px;
+      .project-card {
+        @include border(--border-color);
+        min-width: 359px;
+        min-height: 572px;
       }
     }
   }

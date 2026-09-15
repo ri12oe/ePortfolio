@@ -1631,6 +1631,7 @@ main .project-content {
   gap: 24px;
   min-height: 100vh;
   margin-bottom: 32px;
+  flex-direction: column;
 }
 main .project-content .project-header {
   display: flex;
@@ -1645,6 +1646,7 @@ main .project-content .project-header {
   border-radius: 15px;
   box-shadow: var(--box-shadow);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  margin-bottom: 32px;
 }
 main .project-content .project-header .project-title {
   font-size: 42px;
@@ -1666,4 +1668,18 @@ main .project-content .project-header .project-desp {
 }
 main .project-content .project-header:hover {
   transform: scale(1.02);
+}
+main .project-content .project-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+main .project-content .project-cards .project-card {
+  background-color: --border-color;
+  border: 1px solid --border-color;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  min-width: 359px;
+  min-height: 572px;
 }
