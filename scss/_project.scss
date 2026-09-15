@@ -39,7 +39,7 @@ main {
     .project-cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 32px;
       .project-card {
         @include border(--border-color);
         min-width: 359px;

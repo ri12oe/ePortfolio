@@ -1665,7 +1665,7 @@ main .project-content .project-header .project-desp {
 main .project-content .project-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
 }
 main .project-content .project-cards .project-card {
   background-color: --border-color;
