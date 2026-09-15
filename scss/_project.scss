@@ -16,8 +16,7 @@ main {
       min-width: fit-content;
       height: fit-content;
       padding: 24px;
-      @include border(--border-color);
-      margin-bottom: 32px;
+    //   @include border(--border-color);
       .project-title {
         font-size: 42px;
         font-weight: 800;
@@ -35,9 +34,6 @@ main {
       .project-desp {
         color: var(--text-color);
         font-weight: 400;
-      }
-      &:hover {
-        transform: scale($scale-content);
       }
     }
     .project-cards {
@@ -110,6 +106,15 @@ main {
             border-radius: 12px;
             font-size: 16px;
             font-weight: 600;
+            &:focus-visible {
+              outline: 2px solid var(--primary-color);
+              outline-offset: 4px;
+              border-radius: 6px;
+            }
+            &:hover {
+              transform: scale($scale-content);
+              cursor: pointer;
+            }
           }
         }
         .card-links {

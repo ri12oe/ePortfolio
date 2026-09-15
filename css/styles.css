@@ -1643,12 +1643,6 @@ main .project-content .project-header {
   min-width: fit-content;
   height: fit-content;
   padding: 24px;
-  background-color: --border-color;
-  border: 1px solid --border-color;
-  border-radius: 15px;
-  box-shadow: var(--box-shadow);
-  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-  margin-bottom: 32px;
 }
 main .project-content .project-header .project-title {
   font-size: 42px;
@@ -1667,9 +1661,6 @@ main .project-content .project-header .project-title .big-txt {
 main .project-content .project-header .project-desp {
   color: var(--text-color);
   font-weight: 400;
-}
-main .project-content .project-header:hover {
-  transform: scale(1.02);
 }
 main .project-content .project-cards {
   display: grid;
@@ -1745,6 +1736,15 @@ main .project-content .project-cards .project-card .card-stacks .card-stack {
   border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
+}
+main .project-content .project-cards .project-card .card-stacks .card-stack:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+main .project-content .project-cards .project-card .card-stacks .card-stack:hover {
+  transform: scale(1.02);
+  cursor: pointer;
 }
 main .project-content .project-cards .project-card .card-links {
   display: flex;
