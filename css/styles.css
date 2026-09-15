@@ -1675,9 +1675,12 @@ main .project-content .project-cards .project-card {
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   min-width: 359px;
   min-height: 572px;
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
   padding: 24px;
 }
 main .project-content .project-cards .project-card:hover {
+  opacity: 1;
+  filter: blur(0);
   transform: scale(1.02);
 }
 main .project-content .project-cards .project-card svg {
@@ -1795,4 +1798,13 @@ main .project-content .project-cards .project-card .card-links a {
   justify-content: center;
   gap: 10px;
   line-height: normal;
+}
+main .project-content .project-cards:has(.project-card:hover) .project-card {
+  opacity: 0.4;
+  filter: blur(2px);
+}
+main .project-content .project-cards:has(.project-card:hover) .project-card:hover {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1.02);
 }

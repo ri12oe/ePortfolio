@@ -40,14 +40,19 @@ main {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 32px;
+
       .project-card {
         @include border(--border-color);
         min-width: 359px;
         min-height: 572px;
+        transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
         padding: 24px;
         &:hover {
+          opacity: 1;
+          filter: blur(0);
           transform: scale($scale-content);
         }
+        
         svg {
           margin-bottom: 12px;
         }
@@ -171,6 +176,17 @@ main {
             line-height: normal;
           }
         }
+      }
+
+      &:has(.project-card:hover) .project-card {
+        opacity: 0.4;
+        filter: blur(2px);
+      }
+
+      &:has(.project-card:hover) .project-card:hover {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale($scale-content);
       }
     }
   }
