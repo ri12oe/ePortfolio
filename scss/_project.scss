@@ -1,0 +1,41 @@
+main {
+  margin-bottom: 42px;
+  .project-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    min-height: 100vh;
+    margin-bottom: 32px;
+    .project-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      min-width: fit-content;
+      height: fit-content;
+      padding: 24px;
+      @include border(--border-color);
+      .project-title {
+        font-size: 42px;
+        font-weight: 800;
+        color: var(--ink);
+        .big-txt {
+          border-bottom: 5px solid var(--border-line);
+          width: fit-content;
+          text-decoration: none;
+          color: $primary-color;
+          font-weight: 800;
+          font-size: 52px;
+          text-transform: uppercase;
+        }
+      }
+      .project-desp {
+        color: var(--text-color);
+        font-weight: 400;
+      }
+      &:hover {
+        transform: scale($scale-content);
+      }
+    }
+  }
+}

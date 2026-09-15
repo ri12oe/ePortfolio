@@ -1621,3 +1621,49 @@ main .tem {
   font-size: 42px;
   color: var(--ink);
 }
+
+main {
+  margin-bottom: 42px;
+}
+main .project-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  min-height: 100vh;
+  margin-bottom: 32px;
+}
+main .project-content .project-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  min-width: fit-content;
+  height: fit-content;
+  padding: 24px;
+  background-color: --border-color;
+  border: 1px solid --border-color;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+}
+main .project-content .project-header .project-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--ink);
+}
+main .project-content .project-header .project-title .big-txt {
+  border-bottom: 5px solid var(--border-line);
+  width: fit-content;
+  text-decoration: none;
+  color: #7A3FFF;
+  font-weight: 800;
+  font-size: 52px;
+  text-transform: uppercase;
+}
+main .project-content .project-header .project-desp {
+  color: var(--text-color);
+  font-weight: 400;
+}
+main .project-content .project-header:hover {
+  transform: scale(1.02);
+}
