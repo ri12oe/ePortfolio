@@ -1,0 +1,81 @@
+.logo-reveal {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  &__inner {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 220px;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    
+    transition:
+      left 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+    .logo-black-shape {
+      fill: var(--ink);
+    }
+  }
+
+  &.is-active &__logo {
+    left: 14%;
+    transform: translate(-50%, -50%) scale(0.72);
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translateY(-50%) translateX(28px);
+    opacity: 0;
+    pointer-events: none;
+    padding: 32px 40px;
+    @include border(--border-color);
+
+    transition:
+      opacity 1.2s ease 0.3s,
+      transform 1.2s ease 0.3s;
+    max-width: 380px;
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+
+  &.is-active &__content {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) translateX(0);
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--ink);
+    text-decoration: none;
+
+    svg {
+      width: 22px;
+      height: 22px;
+      transition: 0.3s ease;
+    }
+    &:hover svg {
+      transform: translateX(4px);
+    }
+  }
+}
