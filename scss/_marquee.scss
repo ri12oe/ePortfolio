@@ -1,0 +1,27 @@
+.scroll-marquee {
+    overflow: hidden;
+    width: 100%;
+    padding: 24px 0;
+
+    .marquee-row {
+        overflow: hidden;
+        width: 100%;
+        white-space: nowrap;
+
+        & + .marquee-row {
+            margin-top: 8px;
+        }
+    }
+    .marquee-track {
+        display: inline-flex;
+        will-change: transform;
+        span {
+            font-size: clamp(2rem, 5vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            padding-right: 2rem;
+            text-transform: uppercase;
+            color: var(--ink);
+        }
+    }
+}

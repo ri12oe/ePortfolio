@@ -1632,7 +1632,7 @@ main .project-content {
   flex-wrap: wrap;
   gap: 24px;
   min-height: 100vh;
-  margin-bottom: 32px;
+  margin-bottom: 96px;
   flex-direction: column;
 }
 main .project-content .project-header {
@@ -1807,4 +1807,29 @@ main .project-content .project-cards:has(.project-card:hover) .project-card:hove
   opacity: 1;
   filter: blur(0);
   transform: scale(1.02);
+}
+.scroll-marquee {
+  overflow: hidden;
+  width: 100%;
+  padding: 24px 0;
+}
+.scroll-marquee .marquee-row {
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+}
+.scroll-marquee .marquee-row + .marquee-row {
+  margin-top: 8px;
+}
+.scroll-marquee .marquee-track {
+  display: inline-flex;
+  will-change: transform;
+}
+.scroll-marquee .marquee-track span {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  padding-right: 2rem;
+  text-transform: uppercase;
+  color: var(--ink);
 }
