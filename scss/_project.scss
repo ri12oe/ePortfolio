@@ -16,7 +16,7 @@ main {
       min-width: fit-content;
       height: fit-content;
       padding: 24px;
-    //   @include border(--border-color);
+      //   @include border(--border-color);
       .project-title {
         font-size: 42px;
         font-weight: 800;
@@ -45,14 +45,17 @@ main {
         @include border(--border-color);
         min-width: 359px;
         min-height: 572px;
-        transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+        transition:
+          opacity 0.3s ease,
+          filter 0.3s ease,
+          transform 0.3s ease;
         padding: 24px;
         &:hover {
           opacity: 1;
           filter: blur(0);
           transform: scale($scale-content);
         }
-        
+
         svg {
           margin-bottom: 12px;
         }
@@ -191,6 +194,97 @@ main {
     }
   }
   .resume-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 92px;
+    padding: 24px;
+    .resume-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      font-size: 18px;
+      button {
+        appearance: none;
+        border: 0;
+        padding: 0;
+        // background: var(--bg-color);
+        border: 1px solid var(--bg-color);
+        border-radius: 15px;
+        padding: 18px 24px;
+        display: flex;
+        flex: 1 1 0;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+        box-shadow: var(--box-shadow);
 
+        &:focus-visible {
+          outline: 2px solid var(--primary-color);
+          outline-offset: 4px;
+          border-radius: 6px;
+        }
+        &:hover {
+          transform: scale($scale-content);
+        }
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+        flex-shrink: 0;
+      }
+      a {
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: var(--black-root);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        line-height: normal;
+      }
+    }
+    .resume-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      @include border(--border-color);
+      padding: 24px;
+      .left-resume {
+        .left-desp {
+          max-width: clamp(240px, 30vw, 400px);
+          color: var(--ink);
+          font-size: 18px;
+        }
+      }
+      .right-resume {
+        color: var(--ink);
+        .location {
+          border: 1px solid var(--bg-color);
+          border-radius: 15px;
+          padding: 18px 24px;
+          display: flex;
+          flex: 1 1 0;
+          align-items: center;
+          justify-content: center;
+          min-height: 50px;
+          box-shadow: var(--box-shadow);
+          &:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 4px;
+            border-radius: 6px;
+          }
+        }
+      }
+    }
   }
 }
