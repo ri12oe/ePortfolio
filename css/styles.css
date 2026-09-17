@@ -1629,13 +1629,36 @@ main .honors-content {
 main .honors-content .personal-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: justify;
   padding: 24px;
-  gap: 24px;
   color: var(--ink);
 }
+main .honors-content .personal-section .personal-title {
+  display: inline-block;
+  background-color: --border-line;
+  border: 1px solid --border-line;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  color: var(--ink);
+  padding: 10px 28px;
+  border-radius: 16px 16px 0 0;
+  margin-bottom: 0;
+}
+main .honors-content .personal-section .block-content {
+  background-color: --border-line;
+  border: 1px solid --border-line;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  color: var(--ink);
+  padding: 32px;
+  border-radius: 16px;
+  margin-top: 0;
+}
+
 main {
   margin-bottom: 42px;
 }
