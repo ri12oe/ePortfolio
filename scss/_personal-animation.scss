@@ -13,8 +13,8 @@
 
   &__tab {
     display: inline-block;
-    background: var(--ink, #1b2130);
-    color: #fff;
+    @include border(--border-line);
+    color: var(--ink);;
     padding: 18px 36px;
     border-radius: 20px 20px 0 0;
     font-size: 1.8rem;
@@ -25,8 +25,8 @@
   }
 
   &__content {
-    background: var(--ink, #1b2130);
-    color: #f4f4f4;
+    @include border(--border-line);
+    color: var(--ink);;
     border-radius: 20px;
     padding: 48px;
     font-size: 1.05rem;
@@ -50,7 +50,8 @@
   }
 
   &.is-revealed .reveal-group {
-    clip-path: inset(0 0% 0 0);
+    // no clip-path once fully revealed, so the border/box-shadow render without any hairline clipping
+    clip-path: none;
   }
 
   &.is-covering .reveal-group {
@@ -67,7 +68,7 @@
   margin-top: -400px;
   margin-left: -400px;
   border-radius: 50%;
-  background: linear-gradient(90deg, #7A3FFF 50%, #0c0e14 50%);
+  background: linear-gradient(90deg, #7A3FFF 50%, var(--ink) 50%);
   box-shadow: 0 12px 30px rgba(0,0,0,0.3);
   transform: translateX(calc(-50vw - 800px)) rotate(0deg);
   z-index: 5;
