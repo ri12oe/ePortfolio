@@ -379,5 +379,25 @@
     <script src="js/theme.js"></script>
     <script type="module" src="js/globe.js"></script>
     <script src="js/contact.js"></script>
+    <script src="js/dock-menu.js"></script>
+    <div class="dock-menu" id="dockMenu">
+      <button
+        class="dock-menu__toggle"
+        id="dockToggle"
+        aria-label="Toggle navigation"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+          <polygon points="10,100 10,26 18,20 55,100" fill="#7A3FFF" />
+          <polygon  class="logo-black-shape" points="110,100 110,26 102,20 65,100" fill="#ffffff" />
+        </svg>
+      </button>
+      <nav class="dock-menu__links">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="about.html">About</a>
+        <a href="honors.html">Honors</a>
+        <a href="index.html#blog">Blog</a>
+      </nav>
+    </div>
   </body>
 </html>
