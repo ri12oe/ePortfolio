@@ -39,7 +39,8 @@
     opacity: 0;
     pointer-events: none;
     padding: 32px 40px;
-    @include border(--border-color);
+    // background-color: red;
+    // @include border(--border-color);
 
     transition:
       opacity 1.2s ease 0.3s,
