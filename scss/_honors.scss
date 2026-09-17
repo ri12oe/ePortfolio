@@ -1,3 +1,21 @@
 main {
-    
+  .honors-content {
+    min-height: 100vh;
+    .personal-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align:justify;
+        padding: 24px;
+        gap: 24px;
+        color: var(--ink);
+        .personal-title {
+
+        }
+        .personal-descp {
+
+        }
+    }
+  }
 }
