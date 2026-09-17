@@ -1,29 +1,51 @@
 main {
   .honors-content {
     min-height: 100vh;
-    .personal-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align:justify;
-        padding: 24px;
-        color: var(--ink);
-        .personal-title {
+    .personal-statement {
+        position: relative;
+        overflow: hidden;
+        max-width: 1100px;
+        margin: 60px auto 160px;
+        padding: 60px 24px;
+        text-align: justify;
+        .reveal-group {
+            position: relative;
+            clip-path: inset(0 100% 0 0); //fully hiddden
+
+        }
+
+        &__tab {
             display: inline-block;
             @include border(--border-line);
             color: var(--ink);
-            padding: 10px 28px;
-            border-radius: 16px 16px 0 0;
-            margin-bottom: 0;
+            padding: 18px 36px;
+            border-radius: 20px 20px 0 0;
+            font-size: 1.8em;
+            font-weight: 800;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
         }
-        .block-content {
+
+        &__content {
             @include border(--border-line);
             color: var(--ink);
-            padding: 32px;
-            border-radius: 16px;
-            margin-top: 0;
+            border-radius: 20px;
+            padding: 1.05rem;
+            line-height: 1.7;
+            p {
+                margin: 0 0 20px;
+            }
+        }
 
+        @keyframes wipeReveal {
+            0% {clip-path: inset(0 100% 0 0);}
+            100% {clip-path: inset(0 0% 0 0);}
+        }
+
+        @keyframes wipeCover {
+            0% {clip-path: inset(0 0% 0 0);}
+            100% {clip-path: inset(0 100% 0 0);}
         }
     }
   }
