@@ -1,0 +1,144 @@
+.dock-menu {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: var(--menu-color);
+  width: 64px;
+  height: 56px;
+  border-radius: 22px;
+  opacity: 0.35;
+  overflow: hidden;
+  z-index: 999; // sit above your page content
+  transition:
+    opacity 0.4s ease,
+    gap 0.4s ease;
+
+  &:hover,
+  &.is-opening,
+  &.is-open,
+  &.is-closing {
+    opacity: 1;
+  }
+
+  &.is-open {
+    gap: 40px;
+  }
+
+  @keyframes dockOpen {
+    0% {
+      width: 64px;
+      height: 56px;
+      border-radius: 22px;
+      bottom: 32px;
+    }
+    55% {
+      width: 70vw;
+      height: 100px;
+      border-radius: 40px 40px 22px 22px;
+      bottom: 16px;
+    }
+    100% {
+      width: 100vw;
+      height: 96px;
+      border-radius: 24px 24px 0 0;
+      bottom: 0;
+    }
+  }
+
+  @keyframes dockClose {
+    0% {
+      width: 100vw;
+      height: 96px;
+      border-radius: 24px 24px 0 0;
+      bottom: 0;
+    }
+    45% {
+      width: 70vw;
+      height: 100px;
+      border-radius: 40px 40px 22px 22px;
+      bottom: 16px;
+    }
+    100% {
+      width: 64px;
+      height: 56px;
+      border-radius: 22px;
+      bottom: 32px;
+    }
+  }
+
+  &.is-opening {
+    animation: dockOpen 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  &.is-open {
+    width: 100vw;
+    height: 96px;
+    border-radius: 24px 24px 0 0;
+    bottom: 0;
+  }
+
+  &.is-closing {
+    animation: dockClose 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  &__toggle {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 26px;
+      height: 26px;
+      .logo-black-shape {
+        fill: var(--menu-text);
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition:
+      max-width 0.5s ease,
+      opacity 0.3s ease;
+
+    a {
+      color: var(--menu-text);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &.is-open &__links {
+    max-width: 900px;
+    opacity: 1;
+    transition:
+      max-width 0.5s ease,
+      opacity 0.4s ease 0.5s;
+  }
+}
