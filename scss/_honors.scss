@@ -47,6 +47,30 @@ main {
             0% {clip-path: inset(0 0% 0 0);}
             100% {clip-path: inset(0 100% 0 0);}
         }
+
+        &.is-rolling .reveal-group {
+            animation: wipeReveal 3.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+        &.is-revealed .reveal-group {
+            clip-path: inset(0 0% 0 0);
+        }
+
+        &.is-covering .reveal-group {
+            animation: wipeCover 2.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+    }
+    .roll-ball {
+        position: absolute;
+        top: 50%;
+        left: -560px;
+        width: 560px;
+        height: 560px;
+        margin-top: -280px;
+        border-radius: 50%;
+        background: linear-gradient(90deg, #7a3fff 50%, #0c0e14 50%);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        transform: rotate(0deg);
+        z-index: 5;
     }
   }
 }
