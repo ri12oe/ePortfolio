@@ -13,6 +13,8 @@ main {
       flex-direction: column;
       gap: 24px;
       @include border(var(--border-color));
+      // card shows the page background, so the read-more fade should match it
+      --expandable-fade: var(--bg-color);
       .about-section {
         padding: 62px;
         gap: 12px;

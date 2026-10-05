@@ -108,48 +108,55 @@
             <div class="about-section">
               <p class="about-title">About <br> </p>
               <p class="subtitle">Some Information about me.</p>
-              <p class="information">
-              My name is Mario Espinoza-Gutierrez, and I’ve been involved 
-              in web development for several years. What began as 
-              a simple hobby quickly grew into something I dedicate 
-              myself to daily with genuine enthusiasm. I’m especially 
-              passionate about building modern, visually appealing web 
-              applications, and I enjoy using Next.js and React because it allows 
-              me to work with the latest approaches in web development. 
-              Even though I haven’t worked professionally in this field yet, 
-              I’m motivated by curiosity, creativity, and the desire to learn 
-              quickly and efficiently.
-              </p>
-              <p class="information">
-              I chose IU Indianapolis because it offers an environment 
-              where I can grow academically while also exploring my interests in technology. 
-              The campus community, opportunities for hands‑on learning, and the support for 
-              student innovation made it feel like the right place for me to continue 
-              developing both personally and professionally.
-              </p>
-              <p class="information">
-              To me, being an Honors student means setting clear goals 
-              for my future and actively seeking experiences that help me grow. It means 
-              challenging myself, staying committed to learning, and pushing beyond my comfort 
-              zone. The Honors College encourages me to think critically, communicate effectively, 
-              and engage with diverse perspectives—values that align with the kind of student and 
-              developer I want to become.
-              </p>
-              <p class="information">
-              My academic and career goals include becoming a skilled full‑stack developer and 
-              contributing to projects that make the online world more modern, accessible, and 
-              engaging. Personally, I hope to continue improving my problem‑solving abilities, 
-              collaborate with others who share my passion, and build a portfolio that reflects 
-              my growth. Outside of academics, I enjoy playing badminton and rewatching episodes 
-              of The Walking Dead, which gives me a fun break from coding.
-              </p>
-              <p class="information">
-              Through the Honors experience, I hope to gain stronger leadership skills, deeper 
-              connections with peers and mentors, and opportunities that push me to refine both 
-              my technical and personal strengths. Ultimately, I want to build a future where 
-              every website feels modern, meaningful, and thoughtfully designed—and where I 
-              continue learning with purpose.
-              </p>
+              <div class="expandable">
+                <div class="expandable__body">
+                  <p class="information">
+                  My name is Mario Espinoza-Gutierrez, and I’ve been involved 
+                  in web development for several years. What began as 
+                  a simple hobby quickly grew into something I dedicate 
+                  myself to daily with genuine enthusiasm. I’m especially 
+                  passionate about building modern, visually appealing web 
+                  applications, and I enjoy using Next.js and React because it allows 
+                  me to work with the latest approaches in web development. 
+                  Even though I haven’t worked professionally in this field yet, 
+                  I’m motivated by curiosity, creativity, and the desire to learn 
+                  quickly and efficiently.
+                  </p>
+                  <p class="information">
+                  I chose IU Indianapolis because it offers an environment 
+                  where I can grow academically while also exploring my interests in technology. 
+                  The campus community, opportunities for hands‑on learning, and the support for 
+                  student innovation made it feel like the right place for me to continue 
+                  developing both personally and professionally.
+                  </p>
+                  <p class="information">
+                  To me, being an Honors student means setting clear goals 
+                  for my future and actively seeking experiences that help me grow. It means 
+                  challenging myself, staying committed to learning, and pushing beyond my comfort 
+                  zone. The Honors College encourages me to think critically, communicate effectively, 
+                  and engage with diverse perspectives—values that align with the kind of student and 
+                  developer I want to become.
+                  </p>
+                  <p class="information">
+                  My academic and career goals include becoming a skilled full‑stack developer and 
+                  contributing to projects that make the online world more modern, accessible, and 
+                  engaging. Personally, I hope to continue improving my problem‑solving abilities, 
+                  collaborate with others who share my passion, and build a portfolio that reflects 
+                  my growth. Outside of academics, I enjoy playing badminton and rewatching episodes 
+                  of The Walking Dead, which gives me a fun break from coding.
+                  </p>
+                  <p class="information">
+                  Through the Honors experience, I hope to gain stronger leadership skills, deeper 
+                  connections with peers and mentors, and opportunities that push me to refine both 
+                  my technical and personal strengths. Ultimately, I want to build a future where 
+                  every website feels modern, meaningful, and thoughtfully designed—and where I 
+                  continue learning with purpose.
+                  </p>
+                </div>
+                <button class="expandable__toggle" type="button" aria-expanded="false">
+                  Read more
+                </button>
+              </div>
             </div>
           </div>
           <div class="right-about-content">
@@ -381,6 +388,7 @@
     <script type="module" src="js/globe.js"></script>
     <script src="js/contact.js"></script>
     <script src="js/dock-menu.js"></script>
+    <script src="js/read-more.js"></script>
     <div class="dock-menu" id="dockMenu">
       <button
         class="dock-menu__toggle"

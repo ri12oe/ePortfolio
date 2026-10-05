@@ -166,6 +166,10 @@ main {
       &__answer {
         color: var(--ink);
         line-height: 1.7;
+
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
       }
 
       &__reflection {
@@ -174,6 +178,10 @@ main {
         padding: 40px;
         color: var(--ink);
         line-height: 1.7;
+
+        p:not(:last-child) {
+          margin-bottom: 16px;
+        }
 
         &:hover {
           transform: scale($scale-content);

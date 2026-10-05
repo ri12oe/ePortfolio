@@ -949,6 +949,7 @@ main .about-content .left-about-content {
   border-radius: 15px;
   box-shadow: var(--box-shadow);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  --expandable-fade: var(--bg-color);
 }
 main .about-content .left-about-content .about-section {
   padding: 62px;
@@ -1781,6 +1782,9 @@ main .honors-content .field-interview__answer {
   color: var(--ink);
   line-height: 1.7;
 }
+main .honors-content .field-interview__answer:not(:last-child) {
+  margin-bottom: 16px;
+}
 main .honors-content .field-interview__reflection {
   background-color: var(--card);
   border: 1px solid var(--card);
@@ -1791,6 +1795,9 @@ main .honors-content .field-interview__reflection {
   padding: 40px;
   color: var(--ink);
   line-height: 1.7;
+}
+main .honors-content .field-interview__reflection p:not(:last-child) {
+  margin-bottom: 16px;
 }
 main .honors-content .field-interview__reflection:hover {
   transform: scale(1.02);
@@ -2454,6 +2461,52 @@ main .resume-content .resume-bottom .right-resume .location:focus-visible {
   max-width: 900px;
   opacity: 1;
   transition: max-width 0.5s ease, opacity 0.4s ease 0.5s;
+}
+
+.expandable__body {
+  position: relative;
+  max-height: 11em;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.expandable__body::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5em;
+  background: linear-gradient(to bottom, transparent, var(--expandable-fade, var(--card)));
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.expandable__toggle {
+  background-color: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  margin-top: 16px;
+  padding: 10px 24px;
+  border-color: var(--border-line);
+  border-radius: 999px;
+  color: var(--primary-color);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
+.expandable__toggle:hover, .expandable__toggle:focus-visible {
+  color: var(--menu-text);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: scale(1.06);
+}
+.expandable.is-open .expandable__body::after {
+  opacity: 0;
+}
+.expandable.is-short .expandable__toggle {
+  display: none;
 }
 
 .personal-statement {
