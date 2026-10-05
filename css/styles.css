@@ -61,6 +61,7 @@ body {
 
 html {
   overflow-x: clip;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -1625,8 +1626,339 @@ main .moreInfro .lower-content .right-lowers .right-lower .right-lower-hr2 svg {
 }
 main .honors-content {
   min-height: 100vh;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+}
+main .honors-content section {
+  scroll-margin-top: 32px;
+}
+main .honors-content .glow-hover > * {
+  position: relative;
+  z-index: 1;
+}
+main .honors-content .honors-title {
+  color: var(--primary-color);
+  border-bottom: 5px solid var(--border-line);
+  width: fit-content;
+  font-weight: 800;
+  font-size: clamp(22px, 2.5vw, 42px);
+  text-transform: uppercase;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+main .honors-content .honors-hero {
+  padding: 80px 0 0;
+  text-align: center;
+}
+main .honors-content .honors-hero__eyebrow {
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  margin-bottom: 8px;
+}
+main .honors-content .honors-hero__title {
+  color: var(--ink);
+  font-weight: 900;
+  font-size: clamp(56px, 10vw, 140px);
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+main .honors-content .honors-hero__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+main .honors-content .honors-hero__nav a {
+  background-color: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 999px;
+}
+main .honors-content .honors-hero__nav a:hover {
+  color: var(--menu-text);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: scale(1.06);
+}
+main .honors-content .personal-statement {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+main .honors-content .personal-statement__content {
+  background-color: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  border-color: var(--border-line);
+  color: var(--ink);
+  border-radius: 20px;
+  padding: 56px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+main .honors-content .personal-statement__content p:not(:last-child) {
+  margin-bottom: 20px;
+}
+main .honors-content .personal-statement__content:hover {
+  transform: scale(1.02);
+}
+main .honors-content .field-interview__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 24px;
+  align-items: start;
+}
+main .honors-content .field-interview__profile {
+  background-color: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  padding: 40px 32px;
+  text-align: center;
+  position: sticky;
+  top: 32px;
+}
+main .honors-content .field-interview__avatar {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  border: 4px solid var(--card);
+  box-shadow: var(--box-shadow);
+  background-image: url(../images/honorsFieldGuest.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+main .honors-content .field-interview__name {
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 22px;
+}
+main .honors-content .field-interview__role {
+  color: var(--muted);
+  font-size: 16px;
+}
+main .honors-content .field-interview__qa {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+main .honors-content .field-interview__item {
+  background-color: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  padding: 28px 32px;
+  border-left: 6px solid var(--border-line);
+}
+main .honors-content .field-interview__item:hover {
+  transform: scale(1.02);
+}
+main .honors-content .field-interview__question {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+main .honors-content .field-interview__answer {
+  color: var(--ink);
+  line-height: 1.7;
+}
+main .honors-content .field-interview__reflection {
+  background-color: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  margin-top: 24px;
+  padding: 40px;
+  color: var(--ink);
+  line-height: 1.7;
+}
+main .honors-content .field-interview__reflection:hover {
+  transform: scale(1.02);
+}
+main .honors-content .field-interview__label {
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+main .honors-content .leadership-goals__content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+main .honors-content .leadership-goals__card {
+  background-color: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+main .honors-content .leadership-goals__card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-line);
+}
+main .honors-content .leadership-goals__number {
+  color: var(--primary-color);
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 1;
+}
+main .honors-content .leadership-goals__name {
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 22px;
+}
+main .honors-content .leadership-goals__text {
+  color: var(--muted);
+  line-height: 1.7;
+}
+main .honors-content .journey-map {
+  margin-bottom: 96px;
+}
+main .honors-content .journey-map__content {
+  list-style: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+main .honors-content .journey-map__content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #7A3FFF, #B794FF);
+}
+main .honors-content .journey-map__step {
+  position: relative;
+  width: 50%;
+  padding: 0 48px 40px 0;
+}
+main .honors-content .journey-map__step:nth-child(even) {
+  margin-left: 50%;
+  padding: 0 0 40px 48px;
+}
+main .honors-content .journey-map__step:nth-child(even) .journey-map__dot {
+  left: 0;
+  right: auto;
+  transform: translateX(-50%);
+}
+main .honors-content .journey-map__step:last-child {
+  padding-bottom: 0;
+}
+main .honors-content .journey-map__dot {
+  position: absolute;
+  top: 32px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  transform: translateX(50%);
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: 4px solid var(--bg-color);
+  box-shadow: 0 0 0 3px var(--primary-color);
+  z-index: 2;
+}
+main .honors-content .journey-map__card {
+  background-color: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  padding: 28px 32px;
+}
+main .honors-content .journey-map__card:hover {
+  transform: scale(1.02);
+  border-color: var(--border-line);
+}
+main .honors-content .journey-map__when {
+  color: var(--primary-color);
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+main .honors-content .journey-map__name {
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+main .honors-content .journey-map__text {
+  color: var(--muted);
+  line-height: 1.7;
 }
 
+@media (max-width: 992px) {
+  main .honors-content .field-interview__content {
+    grid-template-columns: 1fr;
+  }
+  main .honors-content .field-interview__profile {
+    position: static;
+  }
+  main .honors-content .leadership-goals__content {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  main .honors-content {
+    gap: 64px;
+    padding: 0 16px;
+  }
+  main .honors-content .honors-hero {
+    padding-top: 48px;
+  }
+  main .honors-content .personal-statement__content {
+    padding: 32px 24px;
+  }
+  main .honors-content .field-interview__reflection {
+    padding: 28px 24px;
+  }
+  main .honors-content .journey-map__content::before {
+    left: 11px;
+    transform: none;
+  }
+  main .honors-content .journey-map__step, main .honors-content .journey-map__step:nth-child(even) {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 0 32px 44px;
+  }
+  main .honors-content .journey-map__step .journey-map__dot, main .honors-content .journey-map__step:nth-child(even) .journey-map__dot {
+    left: 0;
+    right: auto;
+    transform: none;
+  }
+}
 main {
   margin-bottom: 42px;
 }
