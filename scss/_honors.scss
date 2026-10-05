@@ -198,49 +198,107 @@ main {
       }
     }
 
+    // short overview paragraph under a section title
+    .honors-intro {
+      max-width: 760px;
+      margin: -16px auto 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    // small uppercase label at the top of a card
+    .honors-label {
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
     // Engaged Learning & Leadership Goals
     .leadership-goals {
       &__content {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        display: flex;
+        flex-direction: column;
         gap: 24px;
       }
 
       &__card {
         @include border(var(--card));
-        padding: 36px 32px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
+        padding: 40px;
+        border-left: 6px solid var(--border-line);
 
         &:hover {
-          transform: translateY(-8px);
-          border-color: var(--border-line);
+          transform: translateY(-4px);
         }
+      }
+
+      &__head {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        margin-bottom: 24px;
       }
 
       &__number {
         color: var(--primary-color);
         font-weight: 900;
-        font-size: 48px;
+        font-size: 56px;
         line-height: 1;
+        flex-shrink: 0;
       }
 
       &__name {
         color: var(--ink);
         font-weight: 800;
-        font-size: 22px;
+        font-size: 24px;
+        margin-bottom: 4px;
       }
 
-      &__text {
+      &__summary {
         color: var(--muted);
         line-height: 1.7;
+      }
+
+      &__qa:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      &__prompt {
+        color: var(--primary-color);
+        font-weight: 700;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 4px;
+      }
+
+      &__answer {
+        color: var(--ink);
+        line-height: 1.7;
+      }
+
+      &__event {
+        @include border(var(--card));
+        border-color: var(--border-line);
+        margin-top: 24px;
+        padding: 40px;
+
+        .leadership-goals__answer:not(:last-child) {
+          margin-bottom: 20px;
+        }
+
+        &:hover {
+          transform: scale($scale-content);
+        }
       }
     }
 
     // Future Journey Map
     .journey-map {
-      margin-bottom: 96px;
 
       &__content {
         list-style: none;
@@ -332,6 +390,69 @@ main {
         line-height: 1.7;
       }
     }
+
+    // Building My Expertise
+    .building-expertise {
+      &__content {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      &__card {
+        @include border(var(--card));
+        padding: 40px;
+        color: var(--ink);
+        line-height: 1.7;
+
+        &:hover {
+          transform: scale($scale-content);
+          border-color: var(--border-line);
+        }
+      }
+
+      &__skills {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin: 32px 0 0;
+        padding: 0;
+
+        li {
+          @include border(var(--card));
+          border-color: var(--border-line);
+          border-radius: 999px;
+          padding: 8px 20px;
+          color: var(--primary-color);
+          font-weight: 700;
+        }
+      }
+    }
+
+    // Goals & Journey Map Reflection
+    .goals-reflection {
+      margin-bottom: 96px;
+
+      &__content {
+        @include border(var(--card));
+        border-color: var(--border-line);
+        border-radius: 20px;
+        padding: 56px;
+        color: var(--ink);
+        font-size: 1.05rem;
+        line-height: 1.8;
+
+        p:not(:last-child) {
+          margin-bottom: 20px;
+        }
+
+        &:hover {
+          transform: scale($scale-content);
+        }
+      }
+    }
   }
 }
 
@@ -347,7 +468,7 @@ main {
       }
     }
 
-    .leadership-goals__content {
+    .building-expertise__content {
       grid-template-columns: 1fr;
     }
   }
@@ -368,6 +489,33 @@ main {
 
     .field-interview__reflection {
       padding: 28px 24px;
+    }
+
+    .honors-intro {
+      margin-top: -8px;
+    }
+
+    .leadership-goals {
+      &__card,
+      &__event {
+        padding: 28px 24px;
+      }
+
+      &__head {
+        gap: 16px;
+      }
+
+      &__number {
+        font-size: 40px;
+      }
+    }
+
+    .building-expertise__card {
+      padding: 28px 24px;
+    }
+
+    .goals-reflection__content {
+      padding: 32px 24px;
     }
 
     // timeline collapses to a single left-aligned column

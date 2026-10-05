@@ -1810,9 +1810,25 @@ main .honors-content .field-interview__label {
   font-size: 14px;
   margin-bottom: 12px;
 }
+main .honors-content .honors-intro {
+  max-width: 760px;
+  margin: -16px auto 40px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+main .honors-content .honors-label {
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
 main .honors-content .leadership-goals__content {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 24px;
 }
 main .honors-content .leadership-goals__card {
@@ -1821,32 +1837,65 @@ main .honors-content .leadership-goals__card {
   border-radius: 15px;
   box-shadow: var(--box-shadow);
   transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-  padding: 36px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  padding: 40px;
+  border-left: 6px solid var(--border-line);
 }
 main .honors-content .leadership-goals__card:hover {
-  transform: translateY(-8px);
-  border-color: var(--border-line);
+  transform: translateY(-4px);
+}
+main .honors-content .leadership-goals__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 24px;
 }
 main .honors-content .leadership-goals__number {
   color: var(--primary-color);
   font-weight: 900;
-  font-size: 48px;
+  font-size: 56px;
   line-height: 1;
+  flex-shrink: 0;
 }
 main .honors-content .leadership-goals__name {
   color: var(--ink);
   font-weight: 800;
-  font-size: 22px;
+  font-size: 24px;
+  margin-bottom: 4px;
 }
-main .honors-content .leadership-goals__text {
+main .honors-content .leadership-goals__summary {
   color: var(--muted);
   line-height: 1.7;
 }
-main .honors-content .journey-map {
-  margin-bottom: 96px;
+main .honors-content .leadership-goals__qa:not(:last-child) {
+  margin-bottom: 20px;
+}
+main .honors-content .leadership-goals__prompt {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+main .honors-content .leadership-goals__answer {
+  color: var(--ink);
+  line-height: 1.7;
+}
+main .honors-content .leadership-goals__event {
+  background-color: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  border-color: var(--border-line);
+  margin-top: 24px;
+  padding: 40px;
+}
+main .honors-content .leadership-goals__event .leadership-goals__answer:not(:last-child) {
+  margin-bottom: 20px;
+}
+main .honors-content .leadership-goals__event:hover {
+  transform: scale(1.02);
 }
 main .honors-content .journey-map__content {
   list-style: none;
@@ -1925,6 +1974,68 @@ main .honors-content .journey-map__text {
   color: var(--muted);
   line-height: 1.7;
 }
+main .honors-content .building-expertise__content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+main .honors-content .building-expertise__card {
+  background-color: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  padding: 40px;
+  color: var(--ink);
+  line-height: 1.7;
+}
+main .honors-content .building-expertise__card:hover {
+  transform: scale(1.02);
+  border-color: var(--border-line);
+}
+main .honors-content .building-expertise__skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 32px 0 0;
+  padding: 0;
+}
+main .honors-content .building-expertise__skills li {
+  background-color: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  border-color: var(--border-line);
+  border-radius: 999px;
+  padding: 8px 20px;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+main .honors-content .goals-reflection {
+  margin-bottom: 96px;
+}
+main .honors-content .goals-reflection__content {
+  background-color: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  border-color: var(--border-line);
+  border-radius: 20px;
+  padding: 56px;
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+main .honors-content .goals-reflection__content p:not(:last-child) {
+  margin-bottom: 20px;
+}
+main .honors-content .goals-reflection__content:hover {
+  transform: scale(1.02);
+}
 
 @media (max-width: 992px) {
   main .honors-content .field-interview__content {
@@ -1933,7 +2044,7 @@ main .honors-content .journey-map__text {
   main .honors-content .field-interview__profile {
     position: static;
   }
-  main .honors-content .leadership-goals__content {
+  main .honors-content .building-expertise__content {
     grid-template-columns: 1fr;
   }
 }
@@ -1950,6 +2061,24 @@ main .honors-content .journey-map__text {
   }
   main .honors-content .field-interview__reflection {
     padding: 28px 24px;
+  }
+  main .honors-content .honors-intro {
+    margin-top: -8px;
+  }
+  main .honors-content .leadership-goals__card, main .honors-content .leadership-goals__event {
+    padding: 28px 24px;
+  }
+  main .honors-content .leadership-goals__head {
+    gap: 16px;
+  }
+  main .honors-content .leadership-goals__number {
+    font-size: 40px;
+  }
+  main .honors-content .building-expertise__card {
+    padding: 28px 24px;
+  }
+  main .honors-content .goals-reflection__content {
+    padding: 32px 24px;
   }
   main .honors-content .journey-map__content::before {
     left: 11px;
