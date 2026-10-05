@@ -370,12 +370,50 @@ main {
       }
 
       &__when {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
         color: var(--primary-color);
         font-weight: 800;
         letter-spacing: 0.15em;
         text-transform: uppercase;
         font-size: 14px;
         margin-bottom: 6px;
+      }
+
+      // "Currently" badge with the same green pulse as "Available for work!"
+      &__current {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 12px 4px 10px;
+        border: 1px solid rgba(52, 211, 153, 0.5);
+        border-radius: 999px;
+        background: rgba(52, 211, 153, 0.12);
+        color: #10b981;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+      }
+
+      &__pulse {
+        position: relative;
+        width: 10px;
+        height: 10px;
+        flex-shrink: 0;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 50%;
+          background: #34d399;
+        }
+
+        &::before {
+          animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
       }
 
       &__name {
