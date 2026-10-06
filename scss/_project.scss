@@ -75,6 +75,58 @@ main {
         svg {
           margin-bottom: 12px;
         }
+        .card-media {
+          position: relative;
+          width: calc(100% - 3.334%);
+          margin: 1.667% 1.667% calc(12px + 1.667%);
+          .card-img {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 464 / 344;
+            object-fit: cover;
+            border: 1px solid rgba(27, 33, 48, 0.08);
+            border-radius: 6.03% / 8.14%;
+            &.card-img-left {
+              object-position: left top;
+            }
+          }
+          .expand-btn {
+            appearance: none;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+            transition:
+              background-color 0.2s ease,
+              transform 0.2s ease;
+            &:hover {
+              background: var(--primary-color);
+              transform: scale(1.08);
+            }
+            &:focus-visible {
+              outline: 2px solid var(--primary-color);
+              outline-offset: 3px;
+            }
+            svg {
+              display: block;
+              margin: 0;
+              flex-shrink: 0;
+            }
+          }
+        }
         .card-header {
           display: flex;
           justify-content: left;
@@ -314,3 +366,53 @@ main {
   }
 }
 
+.image-viewer,
+.image-viewer:modal {
+  margin: auto;
+  max-width: 94vw;
+  max-height: 94vh;
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  background: transparent;
+  overflow: visible;
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+  }
+  .image-viewer__img {
+    display: block;
+    max-width: 94vw;
+    max-height: 78vh;
+    border-radius: 18px;
+    object-fit: contain;
+    background: #111;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+  }
+  .image-viewer__caption {
+    margin-top: 12px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+  }
+  .image-viewer__close {
+    appearance: none;
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    &:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+    }
+  }
+}
