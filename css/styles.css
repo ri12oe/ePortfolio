@@ -2146,6 +2146,405 @@ main .honors-content .goals-reflection__content:hover {
     transform: none;
   }
 }
+main .honors-content .field-notes {
+  --notes-line: rgba(122, 63, 255, 0.12);
+  --sticky: #fff4b8;
+  --sticky-ink: #3a3200;
+  background-color: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  margin-top: 24px;
+  padding: 40px;
+  color: var(--ink);
+}
+main .honors-content .field-notes__header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+main .honors-content .field-notes__header .field-interview__label {
+  margin-bottom: 4px;
+}
+main .honors-content .field-notes__title {
+  color: var(--ink);
+  font-weight: 800;
+  font-size: clamp(22px, 2.5vw, 32px);
+  margin-bottom: 8px;
+}
+main .honors-content .field-notes__code {
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+main .honors-content .field-notes__code .light-txt {
+  color: #B794FF;
+}
+main .honors-content .field-notes__fn {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+main .honors-content .field-notes__str {
+  color: #2e9e6b;
+}
+main .honors-content .field-notes__hint {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+main .honors-content .field-notes__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-left: 12px;
+}
+main .honors-content .field-notes__tab {
+  font: inherit;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--muted);
+  background: var(--bg-color);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+main .honors-content .field-notes__tab span {
+  color: #B794FF;
+  font-weight: 800;
+  margin-right: 4px;
+}
+main .honors-content .field-notes__tab:hover {
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+main .honors-content .field-notes__tab.is-active {
+  color: #fff;
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+main .honors-content .field-notes__tab.is-active span {
+  color: #fff;
+}
+main .honors-content .field-notes__tab:focus-visible {
+  outline: 3px solid #B794FF;
+  outline-offset: 2px;
+}
+main .honors-content .field-notes__paper {
+  position: relative;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 0 12px 12px 12px;
+  padding: 32px 32px 32px 64px;
+  background-color: var(--bg-color);
+  background-image: linear-gradient(90deg, transparent 43px, rgba(255, 90, 90, 0.35) 43px, rgba(255, 90, 90, 0.35) 45px, transparent 45px), repeating-linear-gradient(to bottom, transparent 0, transparent 31px, var(--notes-line) 31px, var(--notes-line) 32px);
+  min-height: 380px;
+}
+main .honors-content .field-notes__panel {
+  animation: field-notes-in 0.35s ease;
+}
+main .honors-content .field-notes__panel[hidden] {
+  display: none;
+}
+main .honors-content .field-notes__scribble {
+  font-family: "Caveat", cursive;
+  font-size: 30px;
+  color: var(--primary-color);
+  transform: rotate(-1.5deg);
+  margin-bottom: 20px;
+}
+main .honors-content .field-notes__takeaway {
+  margin: 28px 0 0;
+  padding: 14px 18px;
+  border-left: 4px solid var(--border-line);
+  background: var(--card);
+  border-radius: 0 10px 10px 0;
+  line-height: 1.6;
+}
+main .honors-content .field-notes__takeaway strong {
+  color: var(--primary-color);
+}
+main .honors-content .field-notes__timeline {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  position: relative;
+  margin-bottom: 20px;
+}
+main .honors-content .field-notes__timeline::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, var(--primary-color) 0 10px, transparent 10px 16px);
+}
+main .honors-content .field-notes__stop {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  position: relative;
+}
+main .honors-content .field-notes__stop:hover, main .honors-content .field-notes__stop.is-active {
+  color: var(--ink);
+}
+main .honors-content .field-notes__stop.is-active .field-notes__dot {
+  background: var(--primary-color);
+  transform: scale(1.25);
+}
+main .honors-content .field-notes__stop:focus-visible {
+  outline: 3px solid #B794FF;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+main .honors-content .field-notes__dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 4px solid var(--primary-color);
+  background: var(--card);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+main .honors-content .field-notes__detail {
+  background: var(--card);
+  border: 1px dashed #B794FF;
+  border-radius: 12px;
+  padding: 18px 20px;
+  line-height: 1.7;
+  min-height: 124px;
+  margin-bottom: 0;
+}
+main .honors-content .field-notes__split {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: center;
+}
+main .honors-content .field-notes__col {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 20px 24px;
+  border-top: 4px solid #B794FF;
+  box-shadow: var(--box-shadow);
+}
+main .honors-content .field-notes__col ul {
+  list-style: none;
+}
+main .honors-content .field-notes__col li {
+  padding: 6px 0;
+  line-height: 1.5;
+}
+main .honors-content .field-notes__col--human {
+  border-top-color: var(--primary-color);
+}
+main .honors-content .field-notes__col-title {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+main .honors-content .field-notes__vs {
+  font-family: "Caveat", cursive;
+  font-size: 34px;
+  color: var(--muted);
+}
+main .honors-content .field-notes__advice {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 28px;
+  align-items: start;
+}
+main .honors-content .field-notes__checklist {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: var(--box-shadow);
+}
+main .honors-content .field-notes__checklist label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+  cursor: pointer;
+}
+main .honors-content .field-notes__checklist input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+main .honors-content .field-notes__checklist label:has(input:checked) {
+  text-decoration: line-through;
+  text-decoration-color: var(--primary-color);
+  color: var(--muted);
+}
+main .honors-content .field-notes__progress-label {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+main .honors-content .field-notes__progress {
+  height: 8px;
+  border-radius: 99px;
+  background: var(--notes-line);
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+main .honors-content .field-notes__progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+main .honors-content .field-notes__stickies {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+main .honors-content .field-notes__sticky {
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--sticky-ink);
+  background: var(--sticky);
+  padding: 18px 16px;
+  margin: 0;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transform: rotate(-2deg);
+  transition: transform 0.25s ease;
+}
+main .honors-content .field-notes__sticky:nth-child(even) {
+  transform: rotate(2deg);
+  background: #e9ddff;
+  color: #2b1466;
+}
+main .honors-content .field-notes__sticky:hover {
+  transform: rotate(0) scale(1.05);
+}
+main .honors-content .field-notes__values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+main .honors-content .field-notes__value {
+  background: var(--card);
+  border-radius: 12px;
+  border-left: 5px solid var(--border-line);
+  box-shadow: var(--box-shadow);
+  padding: 16px 18px;
+  transition: transform 0.25s ease;
+}
+main .honors-content .field-notes__value:hover {
+  transform: translateY(-3px);
+}
+main .honors-content .field-notes__value summary {
+  font-weight: 800;
+  cursor: pointer;
+  color: var(--ink);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .honors-content .field-notes__value summary::-webkit-details-marker {
+  display: none;
+}
+main .honors-content .field-notes__value summary::after {
+  content: "+";
+  color: var(--primary-color);
+  font-size: 22px;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+main .honors-content .field-notes__value[open] summary::after {
+  transform: rotate(45deg);
+}
+main .honors-content .field-notes__value p {
+  margin: 10px 0 0;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+@keyframes field-notes-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  main .honors-content .field-notes__panel {
+    animation: none;
+  }
+}
+@media (max-width: 768px) {
+  main .honors-content .field-notes {
+    padding: 28px 16px;
+  }
+  main .honors-content .field-notes__tabs {
+    padding-left: 0;
+  }
+  main .honors-content .field-notes__tab {
+    flex: 1 1 45%;
+    border-radius: 12px 12px 0 0;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  main .honors-content .field-notes__paper {
+    border-radius: 0 0 12px 12px;
+    padding: 24px 16px 24px 40px;
+    background-image: linear-gradient(90deg, transparent 23px, rgba(255, 90, 90, 0.35) 23px, rgba(255, 90, 90, 0.35) 25px, transparent 25px), repeating-linear-gradient(to bottom, transparent 0, transparent 31px, var(--notes-line) 31px, var(--notes-line) 32px);
+  }
+  main .honors-content .field-notes__scribble {
+    font-size: 26px;
+  }
+  main .honors-content .field-notes__timeline {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  main .honors-content .field-notes__timeline::before {
+    top: 14px;
+    bottom: 14px;
+    left: 13px;
+    right: auto;
+    width: 3px;
+    height: auto;
+    background: repeating-linear-gradient(180deg, var(--primary-color) 0 10px, transparent 10px 16px);
+  }
+  main .honors-content .field-notes__stop {
+    flex-direction: row;
+    text-align: left;
+    gap: 14px;
+  }
+  main .honors-content .field-notes__split, main .honors-content .field-notes__advice {
+    grid-template-columns: 1fr;
+  }
+  main .honors-content .field-notes__vs {
+    text-align: center;
+  }
+  main .honors-content .field-notes__stickies {
+    grid-template-columns: 1fr;
+  }
+}
 main {
   margin-bottom: 42px;
 }

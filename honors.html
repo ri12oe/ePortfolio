@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
@@ -335,6 +335,185 @@
                   </button>
                 </div>
               </article>
+            </div>
+          </div>
+          <div class="glow-hover field-notes" id="fieldNotes">
+            <div class="field-notes__header">
+              <p class="field-interview__label">Innovative Artifact</p>
+              <h3 class="field-notes__title">Interview Field Notes</h3>
+              <p class="field-notes__code">
+                <span class="light-txt">const</span> notes
+                <span class="light-txt">=</span> interview.<span class="field-notes__fn">summarize</span>(<span class="field-notes__str">"Summer Law"</span>);
+              </p>
+              <p class="field-notes__hint">
+                My notes from the interview, turned into an interactive page.
+                Pick a tab to explore.
+              </p>
+            </div>
+
+            <div class="field-notes__tabs" role="tablist" aria-label="Interview notes">
+              <button class="field-notes__tab is-active" role="tab" id="fnTab1" aria-controls="fnPanel1" aria-selected="true">
+                <span>01</span> Career Path
+              </button>
+              <button class="field-notes__tab" role="tab" id="fnTab2" aria-controls="fnPanel2" aria-selected="false" tabindex="-1">
+                <span>02</span> AI Workflow
+              </button>
+              <button class="field-notes__tab" role="tab" id="fnTab3" aria-controls="fnPanel3" aria-selected="false" tabindex="-1">
+                <span>03</span> Advice
+              </button>
+              <button class="field-notes__tab" role="tab" id="fnTab4" aria-controls="fnPanel4" aria-selected="false" tabindex="-1">
+                <span>04</span> Honors Values
+              </button>
+            </div>
+
+            <div class="field-notes__paper">
+              <!-- 01 Career path -->
+              <div class="field-notes__panel is-active" role="tabpanel" id="fnPanel1" aria-labelledby="fnTab1">
+                <p class="field-notes__scribble">"My path wasn't perfectly straight."</p>
+                <ol class="field-notes__timeline">
+                  <li>
+                    <button class="field-notes__stop is-active" type="button" data-note="She started in informatics because she liked understanding how people interact with technology: how they use it, where they struggle, and what makes an experience feel easy. That focus on people, not just code, became the foundation for everything she does today.">
+                      <span class="field-notes__dot"></span>Informatics
+                    </button>
+                  </li>
+                  <li>
+                    <button class="field-notes__stop" type="button" data-note="During her junior year, she took a web development course that completely changed her direction. She loved the creativity and problem-solving involved in building interfaces, and it showed her she could turn her interest in people into things she could actually build.">
+                      <span class="field-notes__dot"></span>Web Dev Course
+                    </button>
+                  </li>
+                  <li>
+                    <button class="field-notes__stop" type="button" data-note="After graduating, she didn't start out as a developer. She worked in a support role, but used it as a chance to build small internal tools, which gave her real, hands-on development experience.">
+                      <span class="field-notes__dot"></span>Support Role
+                    </button>
+                  </li>
+                  <li>
+                    <button class="field-notes__stop" type="button" data-note="The experience she gained building those internal tools is what helped her make the transition into a full-time web developer position.">
+                      <span class="field-notes__dot"></span>Web Developer
+                    </button>
+                  </li>
+                  <li>
+                    <button class="field-notes__stop" type="button" data-note="Over time, she realized how important accessibility, user experience, and data-driven decision-making are. Now her work blends both sides: she builds interfaces, but also thinks about how people use them, how data flows through them, and how to make everything more inclusive.">
+                      <span class="field-notes__dot"></span>Dev + Informatics
+                    </button>
+                  </li>
+                </ol>
+                <p class="field-notes__detail" aria-live="polite">
+                  She started in informatics because she liked understanding how people interact with technology: how they use it, where they struggle, and what makes an experience feel easy. That focus on people, not just code, became the foundation for everything she does today.
+                </p>
+                <p class="field-notes__takeaway">
+                  <strong>My takeaway:</strong> a career path doesn't have to be a straight line. Ms. Law started in
+                  informatics, found her passion in a single course, and used a support
+                  role to build real tools before becoming a developer. It showed me that
+                  every step counts, even the ones that don't look like the "dream job"
+                  yet, as long as I keep building skills along the way. It also made me
+                  realize that understanding people is just as important as writing code.
+                </p>
+              </div>
+
+              <!-- 02 AI workflow -->
+              <div class="field-notes__panel" role="tabpanel" id="fnPanel2" aria-labelledby="fnTab2" hidden>
+                <p class="field-notes__scribble">AI = "a very fast assistant"</p>
+                <div class="field-notes__split">
+                  <div class="field-notes__col">
+                    <p class="field-notes__col-title">AI helps with</p>
+                    <ul>
+                      <li>Generating boilerplate code</li>
+                      <li>Drafting documentation</li>
+                      <li>Exploring design ideas quickly</li>
+                      <li>A second opinion when debugging</li>
+                      <li>Finding patterns in user feedback</li>
+                    </ul>
+                  </div>
+                  <div class="field-notes__vs" aria-hidden="true">vs</div>
+                  <div class="field-notes__col field-notes__col--human">
+                    <p class="field-notes__col-title">A human decides</p>
+                    <ul>
+                      <li>Final decisions</li>
+                      <li>Reviewing every line it suggests</li>
+                      <li>Making sure it's correct</li>
+                      <li>Making sure it's ethical</li>
+                      <li>Making sure it's accessible</li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="field-notes__takeaway">
+                  <strong>My takeaway:</strong> AI speeds up the repetitive parts so
+                  developers can focus on the parts that need real judgment.
+                </p>
+              </div>
+
+              <!-- 03 Advice -->
+              <div class="field-notes__panel" role="tabpanel" id="fnPanel3" aria-labelledby="fnTab3" hidden>
+                <p class="field-notes__scribble">"Stay curious and keep building things."</p>
+                <div class="field-notes__advice">
+                  <div class="field-notes__checklist">
+                    <p class="field-notes__col-title">Fundamentals first</p>
+                    <p class="field-notes__progress-label">
+                      <span id="fnCount">0</span> / 7 checked off
+                    </p>
+                    <div class="field-notes__progress" aria-hidden="true"><span id="fnBar"></span></div>
+                    <label><input type="checkbox" /> HTML</label>
+                    <label><input type="checkbox" /> CSS</label>
+                    <label><input type="checkbox" /> JavaScript</label>
+                    <label><input type="checkbox" /> A backend language</label>
+                    <label><input type="checkbox" /> How APIs work</label>
+                    <label><input type="checkbox" /> How databases store data</label>
+                    <label><input type="checkbox" /> User experience</label>
+                  </div>
+                  <div class="field-notes__stickies">
+                    <p class="field-notes__sticky">Build your own projects. Don't wait for permission.</p>
+                    <p class="field-notes__sticky">Don't be afraid to break things.</p>
+                    <p class="field-notes__sticky">Explain ideas clearly to anyone.</p>
+                    <p class="field-notes__sticky">Accessibility is part of the job.</p>
+                    <p class="field-notes__sticky">Stay open to feedback.</p>
+                  </div>
+                </div>
+                <p class="field-notes__takeaway">
+                  <strong>My takeaway:</strong> fundamentals matter more than knowing every framework. Instead of
+                  chasing the newest tool, I want to get comfortable with HTML, CSS,
+                  JavaScript, a backend language, APIs, and databases, and keep proving
+                  it through personal projects. Her advice also reminded me that technical
+                  skills are only half of it: communicating clearly, designing for
+                  accessibility, and staying open to feedback are what will help me grow
+                  quickly.
+                </p>
+              </div>
+
+              <!-- 04 Honors values -->
+              <div class="field-notes__panel" role="tabpanel" id="fnPanel4" aria-labelledby="fnTab4" hidden>
+                <p class="field-notes__scribble">Where the Honors values showed up</p>
+                <div class="field-notes__values">
+                  <details class="field-notes__value">
+                    <summary>Critical Thinking</summary>
+                    <p>Her path wasn't linear. Each change of direction was a thoughtful decision.</p>
+                  </details>
+                  <details class="field-notes__value">
+                    <summary>Self-Development</summary>
+                    <p>Keep learning by building personal projects and trying new tools.</p>
+                  </details>
+                  <details class="field-notes__value">
+                    <summary>Equity &amp; Inclusion</summary>
+                    <p>Accessibility and inclusive design make technology work for everyone.</p>
+                  </details>
+                  <details class="field-notes__value">
+                    <summary>Professionalism</summary>
+                    <p>Reviewing AI output and owning the final decision.</p>
+                  </details>
+                  <details class="field-notes__value">
+                    <summary>Collaboration</summary>
+                    <p>Explaining ideas clearly to teammates and non-technical stakeholders.</p>
+                  </details>
+                </div>
+                <p class="field-notes__takeaway">
+                  <strong>My takeaway:</strong> the Honors values aren't just academic ideals. Ms. Law uses them
+                  every day: critical thinking guided her career changes, self-development
+                  keeps her learning new tools like AI, inclusion shapes how she designs
+                  for accessibility, professionalism means she owns every final decision,
+                  and collaboration shows up whenever she explains ideas to her team.
+                  Seeing that made me realize the habits I'm building as an Honors student
+                  are the same ones I'll rely on as a developer.
+                </p>
+              </div>
             </div>
           </div>
           <div class="glow-hover field-interview__reflection">
@@ -874,6 +1053,7 @@
     <script src="js/contact.js"></script>
     <script src="js/dock-menu.js"></script>
     <script src="js/read-more.js"></script>
+    <script src="js/field-notes.js"></script>
     <div class="dock-menu" id="dockMenu">
       <button
         class="dock-menu__toggle"
