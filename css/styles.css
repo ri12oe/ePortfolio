@@ -646,7 +646,7 @@ main .main-content .right-content .about-me-content .gray-txt {
   font-size: 16px;
 }
 main .main-content .right-content .about-me-content .image-containter {
-  background-image: url(../images/me.jpg);
+  background-image: url(../images/me.webp);
   width: 420px;
   height: 600px;
   background-position: center;
@@ -1009,7 +1009,7 @@ main .about-content .right-about-content {
   padding: 32px;
 }
 main .about-content .right-about-content .image-containter {
-  background-image: url(../images/me.jpg);
+  background-image: url(../images/me.webp);
   width: 420px;
   height: 600px;
   background-position: center;
@@ -1760,7 +1760,7 @@ main .honors-content .field-interview__avatar {
   border-radius: 50%;
   border: 4px solid var(--card);
   box-shadow: var(--box-shadow);
-  background-image: url(../images/honorsFieldGuest.jpg);
+  background-image: url(../images/honorsFieldGuest.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -92,7 +92,7 @@
     article.id = `post-${post.id}`;
 
     const avatar = el('img', 'avatar');
-    avatar.src = author.avatar || 'images/me.jpg';
+    avatar.src = author.avatar || 'images/me.webp';
     avatar.alt = '';
     article.appendChild(avatar);
 
