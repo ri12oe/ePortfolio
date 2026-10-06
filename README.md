@@ -1,8 +1,8 @@
-﻿# Mario's ePortfolio
+# Mario's ePortfolio
 
-**Live site:** [marioespinoza.dev](https://marioespinoza.dev)
+🌐 **Live site:** [marioespinoza.dev](https://marioespinoza.dev)
 
-A personal ePortfolio built for Indiana University's Honors Program (HON-N200). The site showcases my academic journey, projects, honors coursework, and blog in a clean, modern, fully responsive design â€” built from scratch with HTML, Sass, and vanilla JavaScript.
+A personal ePortfolio built for Indiana University's Honors Program (HON-N200). The site showcases my academic journey, projects, honors coursework, and blog in a clean, modern, fully responsive design — built from scratch with HTML, Sass, and vanilla JavaScript.
 
 ## Overview
 
@@ -29,18 +29,18 @@ This portfolio serves as a living record of my academic and professional growth.
 
 ```
 ePortfolio/
-â”œâ”€â”€ assests/          # Favicon and static assets
-â”œâ”€â”€ css/              # Compiled CSS output
-â”œâ”€â”€ images/           # Site imagery
-â”œâ”€â”€ js/               # Page-specific and shared JavaScript modules
-â”œâ”€â”€ scss/             # Sass source partials and main stylesheet
-â”œâ”€â”€ index.html         # Home page
-â”œâ”€â”€ about.html          # About / contact page
-â”œâ”€â”€ project.html        # Projects page
-â”œâ”€â”€ honors.html          # Honors program page
-â”œâ”€â”€ blog.html           # Blog page
-â”œâ”€â”€ CNAME               # Custom domain configuration for GitHub Pages
-â””â”€â”€ package.json        # Project metadata and build scripts
+├── assests/      # Favicon and static assets
+├── css/          # Compiled CSS output
+├── images/       # Site imagery
+├── js/           # Page-specific and shared JavaScript modules
+├── scss/         # Sass source partials and main stylesheet
+├── index.html    # Home page
+├── about.html    # About / contact page
+├── project.html  # Projects page
+├── honors.html   # Honors program page
+├── blog.html     # Blog page
+├── CNAME         # Custom domain configuration for GitHub Pages
+└── package.json  # Project metadata and build scripts
 ```
 
 ## Development Process
@@ -69,10 +69,10 @@ The site is deployed via GitHub Pages and served at the custom domain configured
 ## Author
 
 **Mario Espinoza**
-Honors Program, Indiana University â€” HON-N200
+Honors Program, Indiana University — HON-N200
 
 ## License & Copyright
 
-Copyright Â© 2026 Mario Espinoza. All Rights Reserved.
+Copyright © 2026 Mario Espinoza. All Rights Reserved.
 
 This repository is provided for viewing purposes only. No part of this work may be copied, modified, or distributed without prior written permission. See the [LICENSE](./LICENSE) file for details.
