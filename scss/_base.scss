@@ -177,3 +177,17 @@ p {
     opacity: 0;
   }
 }
+
+@keyframes building-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 4px rgba(122, 63, 255, 0.15),
+      0 0 16px rgba(122, 63, 255, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 0 6px rgba(122, 63, 255, 0.25),
+      0 0 34px rgba(122, 63, 255, 0.6);
+  }
+}

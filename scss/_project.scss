@@ -50,12 +50,28 @@ main {
           filter 0.3s ease,
           transform 0.3s ease;
         padding: 24px;
+        display: grid;
+        grid-row: span 4;
+        grid-template-rows: subgrid;
+        row-gap: 0;
         &:hover {
           opacity: 1;
           filter: blur(0);
           transform: scale($scale-content);
         }
 
+        &.in-progress {
+          border: 2px solid var(--primary-color);
+          box-shadow:
+            0 0 0 4px rgba(122, 63, 255, 0.15),
+            0 0 28px rgba(122, 63, 255, 0.45);
+          animation: building-glow 2.4s ease-in-out infinite;
+          .card-header .status {
+            background-color: var(--primary-color);
+            color: #fff;
+            font-weight: 600;
+          }
+        }
         svg {
           margin-bottom: 12px;
         }
@@ -100,13 +116,20 @@ main {
             }
           }
         }
+        .card-body {
+          display: flex;
+          flex-direction: column;
+        }
         .card-descp {
           color: var(--text-color);
           font-weight: 400;
         }
         .card-stacks {
           display: flex;
-          gap: 12px;
+          flex-wrap: wrap;
+          align-content: flex-start;
+          align-items: flex-start;
+          gap: 8px;
           .card-stack {
             color: var(--bg-color);
             background: var(--border-line);
@@ -121,11 +144,12 @@ main {
             }
             &:hover {
               transform: scale($scale-content);
-              cursor: pointer;
+              
             }
           }
         }
         .card-links {
+          padding-top: 16px;
           display: flex;
           align-items: center;
           gap: 12px;
