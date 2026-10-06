@@ -2,8 +2,8 @@
   "name": "eportfolio",
   "version": "1.0.0",
   "description": "",
-  "license": "ISC",
-  "author": "",
+  "license": "UNLICENSED",
+  "author": "Mario Espinoza",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
