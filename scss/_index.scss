@@ -219,6 +219,7 @@ main {
           justify-content: center;
           align-items: center;
           gap: 32px;
+          padding: 24px;
           &:hover {
             transform: scale($scale-content);
           }
