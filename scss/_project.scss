@@ -416,3 +416,114 @@ main {
     }
   }
 }
+
+@media (max-width: 1100px) {
+  main .project-content .project-cards {
+    grid-template-columns: repeat(2, 1fr);
+
+    .project-card {
+      min-width: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    .project-content {
+      min-height: auto;
+      margin-bottom: 48px;
+
+      .project-header {
+        min-width: 0;
+        padding: 16px;
+        text-align: center;
+
+        .project-title {
+          font-size: 32px;
+
+          .big-txt {
+            font-size: 40px;
+          }
+        }
+      }
+
+      .project-cards {
+        grid-template-columns: 1fr;
+        gap: 24px;
+
+        .project-card {
+          grid-row: auto;
+          grid-template-rows: none;
+          min-width: 0;
+          min-height: 0;
+          padding: 16px;
+          row-gap: 12px;
+
+          &:hover {
+            transform: none;
+          }
+
+          .card-header {
+            flex-wrap: wrap;
+            gap: 12px;
+
+            .card-title {
+              font-size: 26px;
+            }
+          }
+
+          .card-links {
+            flex-wrap: wrap;
+          }
+        }
+      }
+    }
+
+    .resume-content {
+      gap: 48px;
+      padding: 16px;
+
+      .resume-top {
+        flex-wrap: wrap;
+        width: 100%;
+        font-size: 16px;
+      }
+
+      .resume-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 16px;
+
+        .left-resume .left-desp {
+          max-width: 100%;
+        }
+
+        .right-resume {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  main .project-content {
+    .project-header .project-title {
+      font-size: 26px;
+
+      .big-txt {
+        font-size: 32px;
+      }
+    }
+
+    .project-cards .project-card .card-links button {
+      flex: 1 1 100%;
+    }
+  }
+
+  .image-viewer .image-viewer__close {
+    top: 8px;
+    right: 8px;
+  }
+}

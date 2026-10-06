@@ -2552,6 +2552,92 @@ main .resume-content .resume-bottom .right-resume .location:focus-visible {
   outline-offset: 3px;
 }
 
+@media (max-width: 1100px) {
+  main .project-content .project-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main .project-content .project-cards .project-card {
+    min-width: 0;
+  }
+}
+@media (max-width: 768px) {
+  main .project-content {
+    min-height: auto;
+    margin-bottom: 48px;
+  }
+  main .project-content .project-header {
+    min-width: 0;
+    padding: 16px;
+    text-align: center;
+  }
+  main .project-content .project-header .project-title {
+    font-size: 32px;
+  }
+  main .project-content .project-header .project-title .big-txt {
+    font-size: 40px;
+  }
+  main .project-content .project-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  main .project-content .project-cards .project-card {
+    grid-row: auto;
+    grid-template-rows: none;
+    min-width: 0;
+    min-height: 0;
+    padding: 16px;
+    row-gap: 12px;
+  }
+  main .project-content .project-cards .project-card:hover {
+    transform: none;
+  }
+  main .project-content .project-cards .project-card .card-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  main .project-content .project-cards .project-card .card-header .card-title {
+    font-size: 26px;
+  }
+  main .project-content .project-cards .project-card .card-links {
+    flex-wrap: wrap;
+  }
+  main .resume-content {
+    gap: 48px;
+    padding: 16px;
+  }
+  main .resume-content .resume-top {
+    flex-wrap: wrap;
+    width: 100%;
+    font-size: 16px;
+  }
+  main .resume-content .resume-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+  }
+  main .resume-content .resume-bottom .left-resume .left-desp {
+    max-width: 100%;
+  }
+  main .resume-content .resume-bottom .right-resume {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  main .project-content .project-header .project-title {
+    font-size: 26px;
+  }
+  main .project-content .project-header .project-title .big-txt {
+    font-size: 32px;
+  }
+  main .project-content .project-cards .project-card .card-links button {
+    flex: 1 1 100%;
+  }
+  .image-viewer .image-viewer__close {
+    top: 8px;
+    right: 8px;
+  }
+}
 :root {
   --blog-line: rgba(0, 0, 0, 0.1);
   --blog-hover: rgba(0, 0, 0, 0.035);
@@ -3248,6 +3334,48 @@ main.blog-page .blog-right .pulse-dot::before {
   transform: translateX(4px);
 }
 
+@media (max-width: 768px) {
+  .logo-reveal {
+    min-height: 80vh;
+    padding: 48px 16px;
+  }
+  .logo-reveal__inner {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-reveal__logo, .logo-reveal.is-active .logo-reveal__logo {
+    position: static;
+    left: auto;
+    transform: none;
+    transition: none;
+  }
+  .logo-reveal__logo svg, .logo-reveal.is-active .logo-reveal__logo svg {
+    display: block;
+    width: min(60vw, 220px);
+    height: auto;
+  }
+  .logo-reveal__content, .logo-reveal.is-active .logo-reveal__content {
+    position: static;
+    max-width: 100%;
+    padding: 16px;
+    text-align: center;
+    transform: translateY(24px);
+  }
+  .logo-reveal.is-active .logo-reveal__content {
+    transform: translateY(0);
+  }
+  .logo-reveal__content p {
+    font-size: 16px;
+  }
+  .logo-reveal__cta {
+    font-size: 1.6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 .dock-menu {
   position: fixed;
   bottom: 32px;
@@ -3371,6 +3499,31 @@ main.blog-page .blog-right .pulse-dot::before {
   transition: max-width 0.5s ease, opacity 0.4s ease 0.5s;
 }
 
+@media (max-width: 768px) {
+  .dock-menu {
+    bottom: 20px;
+  }
+  .dock-menu.is-open {
+    gap: 4px;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+  .dock-menu__links {
+    gap: clamp(6px, 2.6vw, 20px);
+    min-width: 0;
+  }
+  .dock-menu__links a {
+    font-size: clamp(0.68rem, 3.3vw, 1rem);
+  }
+  .dock-menu.is-open .dock-menu__links {
+    flex: 1 1 auto;
+    max-width: 100%;
+    justify-content: space-evenly;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+}
 .expandable__body {
   position: relative;
   max-height: 11em;

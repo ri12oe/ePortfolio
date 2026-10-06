@@ -80,3 +80,55 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .logo-reveal {
+    min-height: 80vh;
+    padding: 48px 16px;
+
+    &__inner {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &__logo,
+    &.is-active &__logo {
+      position: static;
+      left: auto;
+      transform: none;
+      transition: none;
+
+      svg {
+        display: block;
+        width: min(60vw, 220px);
+        height: auto;
+      }
+    }
+
+    &__content,
+    &.is-active &__content {
+      position: static;
+      max-width: 100%;
+      padding: 16px;
+      text-align: center;
+      transform: translateY(24px);
+    }
+
+    &.is-active &__content {
+      transform: translateY(0);
+    }
+
+    &__content p {
+      font-size: 16px;
+    }
+
+    &__cta {
+      font-size: 1.6rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

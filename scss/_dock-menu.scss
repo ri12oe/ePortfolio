@@ -142,3 +142,33 @@
       opacity 0.4s ease 0.5s;
   }
 }
+
+@media (max-width: 768px) {
+  .dock-menu {
+    bottom: 20px;
+
+    &.is-open {
+      gap: 4px;
+      padding: 0 8px;
+      box-sizing: border-box;
+    }
+
+    &__links {
+      gap: clamp(6px, 2.6vw, 20px);
+      min-width: 0;
+
+      a {
+        font-size: clamp(0.68rem, 3.3vw, 1rem);
+      }
+    }
+
+    &.is-open &__links {
+      flex: 1 1 auto;
+      max-width: 100%;
+      justify-content: space-evenly;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: env(safe-area-inset-bottom, 0);
+    }
+  }
+}
