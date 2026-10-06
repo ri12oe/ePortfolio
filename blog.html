@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Mario's ePortfolio</title>
+    <link rel="icon" type="image/svg+xml" href="assests/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="blog-page">
+      <aside class="blog-left" aria-label="Site navigation">
+        <a href="index.html" class="blog-logo" aria-label="Home">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="4 14 112 92" aria-hidden="true"><polygon points="10,100 10,26 18,20 55,100" fill="#7A3FFF"></polygon><polygon class="logo-black-shape" points="110,100 110,26 102,20 65,100"></polygon></svg>
+        </a>
+        <nav class="blog-nav">
+          <a href="index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"></path></svg>
+            <span>Home</span>
+          </a>
+          <a href="project.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg>
+            <span>Projects</span>
+          </a>
+          <a href="about.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+            <span>About</span>
+          </a>
+          <a href="honors.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 14-1.5 8 5-3 5 3-1.5-8"></path></svg>
+            <span>Honors</span>
+          </a>
+          <a href="blog.html" class="is-active" aria-current="page">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            <span>Blog</span>
+          </a>
+          <a href="images/MarioResume.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
+            <span>Resume</span>
+          </a>
+        </nav>
+        <button type="button" class="blog-cta contact-trigger">Contact</button>
+        <div class="blog-me">
+          <img src="images/me.jpg" alt="Mario" class="avatar" />
+          <div>
+            <p class="name">Mario Espinoza-Gutierrez</p>
+            <p class="handle">@ri12oe</p>
+          </div>
+        </div>
+      </aside>
+
+      <section class="blog-feed" aria-label="Blog timeline">
+        <div class="blog-feed__top">
+          <div class="blog-feed__bar">
+            <h1 class="blog-feed__title">Blog</h1>
+            <button id="theme-toggle" type="button" class="theme-btn" aria-label="Toggle dark mode">
+            <svg
+              class="icon-moon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+             
+            >
+              
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg
+              class="icon-sun"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+             
+            >
+              
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          </button>
+          </div>
+          <div class="blog-tabs" id="blogTabs" role="tablist" aria-label="Filter posts by topic"></div>
+        </div>
+        <div id="blogFeed" aria-live="polite"></div>
+      </section>
+
+      <aside class="blog-right" aria-label="Search and highlights">
+        <label class="blog-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <input type="search" id="blogSearch" placeholder="Search posts" autocomplete="off" />
+        </label>
+        <div class="blog-card">
+          <h2>About me</h2>
+          <p>Computer science student at IU Indianapolis who loves building modern web apps and learning something new every week.</p>
+          <a href="about.html" class="blog-link">Read more</a>
+        </div>
+        <div class="blog-card">
+          <h2>Currently building</h2>
+          <a class="blog-row" href="project.html">
+            <span class="pulse-dot"></span>
+            <span><strong>Mira</strong><small>Mobile app for caregivers</small></span>
+          </a>
+          <a class="blog-row" href="project.html">
+            <span class="pulse-dot"></span>
+            <span><strong>mX</strong><small>Personal AI assistant</small></span>
+          </a>
+        </div>
+        <div class="blog-card">
+          <h2>Topics</h2>
+          <div id="blogTopics"></div>
+        </div>
+      </aside>
+    </main>
+    <div class="blog-toast" id="blogToast" role="status" aria-live="polite"></div>
+    <footer class="glow-hover">
+      <section class="upper">
+        <div class="connects">
+          <p class="connect-title">Connect</p>
+          <div class="links">
+            <a href="https://github.com/ri12oe">GitHub</a>
+            <a
+              href="https://www.linkedin.com/in/mario-espinoza-gutierrez-442b382b8"
+              >Linkdln</a
+            >
+            <a href="https://indiana.joinhandshake.com/profiles/wyzqc4"
+              >HandShake</a
+            >
+          </div>
+        </div>
+        <div class="contact">
+          <p class="title-contact">Get in touch</p>
+          <p class="contact-link">
+            &lt;<span class="contact-bold-txt">
+              <!-- <a href="#"> Contact </a> -->
+              <button
+                type="button"
+                class="status-card contact-trigger"
+                id="availabilityTrigger"
+              >
+                Contact
+              </button>
+            </span>
+            <span class="light-txt">onSumbit =</span>
+            <span class="dark-purple-mark">{</span>
+            <span class="light-purple-mark">()</span>
+            <span class="light-txt">sendMessage (</span>
+            message <span class="light-txt">)</span>
+            <span class="dark-purple-mark">}</span>
+            <span class="light-txt">/></span>
+          </p>
+        </div>
+      </section>
+      <section class="copyright">
+        Design & built by Mario Espinoza-Gutierrez - All rights reserved © 2026
+      </section>
+    </footer>
+    <div class="backdrop" id="contactBackdrop"></div>
+    <div
+      class="sheet"
+      id="contactSheet"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contactSheetTitle"
+    >
+      <button
+        type="button"
+        class="sheet__handle"
+        id="contactHandle"
+        aria-label="Close contact form"
+      ></button>
+      <h2 id="contactSheetTitle">Contact me</h2>
+      <p class="sheet__sub">
+        If you have any questions, please feel free to contact me.
+      </p>
+      <form id="contactForm">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" required />
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" required></textarea>
+        </div>
+        <div class="sheet__actions">
+          <button type="button" class="btn-cancel" id="contactCancelBtn">
+            Cancel
+          </button>
+          <button type="submit" class="btn-submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script src="js/glow.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/dock-menu.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/image-viewer.js"></script>
+    <div class="dock-menu" id="dockMenu">
+      <button
+        class="dock-menu__toggle"
+        id="dockToggle"
+        aria-label="Toggle navigation"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+          <polygon points="10,100 10,26 18,20 55,100" fill="#7A3FFF" />
+          <polygon  class="logo-black-shape" points="110,100 110,26 102,20 65,100" fill="#ffffff" />
+        </svg>
+      </button>
+      <nav class="dock-menu__links">
+        <a href="index.html">.home</a>
+        <a href="project.html">.projects</a>
+        <a href="about.html">.about</a>
+        <a href="honors.html">.honors</a>
+        <a href="blog.html">.blog</a>
+      </nav>
+    </div>
+  </body>
+</html>

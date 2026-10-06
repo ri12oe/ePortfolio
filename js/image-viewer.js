@@ -12,18 +12,18 @@ const viewerImg = viewer.querySelector('.image-viewer__img');
 const viewerCaption = viewer.querySelector('.image-viewer__caption');
 let lastTrigger = null;
 
-document.querySelectorAll('.card-media').forEach((media) => {
-  const img = media.querySelector('.card-img');
-  const open = (trigger) => {
-    lastTrigger = trigger;
-    viewerImg.src = img.currentSrc || img.src;
-    viewerImg.alt = img.alt;
-    viewerCaption.textContent = img.alt;
-    viewer.showModal();
-  };
-  media.querySelector('.expand-btn').addEventListener('click', (event) => open(event.currentTarget));
+// delegated so images rendered later (e.g. the blog feed) work too
+document.addEventListener('click', (event) => {
+  const trigger = event.target.closest('.expand-btn');
+  const media = trigger && trigger.closest('.card-media, .post-media');
+  const img = media && media.querySelector('.card-img');
+  if (!img) return;
+  lastTrigger = trigger;
+  viewerImg.src = img.currentSrc || img.src;
+  viewerImg.alt = img.alt;
+  viewerCaption.textContent = img.alt;
+  viewer.showModal();
 });
-
 viewer.querySelector('.image-viewer__close').addEventListener('click', () => viewer.close());
 
 // clicking the dark backdrop (the dialog itself) closes the viewer
@@ -33,5 +33,5 @@ viewer.addEventListener('click', (event) => {
 
 viewer.addEventListener('close', () => {
   viewerImg.removeAttribute('src');
-  if (lastTrigger) lastTrigger.focus();
+  if (lastTrigger && lastTrigger.isConnected) lastTrigger.focus();
 });
