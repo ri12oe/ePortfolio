@@ -69,7 +69,7 @@ The site is deployed via GitHub Pages and served at the custom domain configured
 ## Author
 
 **Mario Espinoza**
-Honors Program, Indiana University — HON-N200
+Honors Program, Indiana University — HON-H200
 
 ## License & Copyright
 
